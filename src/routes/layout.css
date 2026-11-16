@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@theme {
+	--font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+	--color-navy-950: #071a30;
+	--color-navy-900: #0a2540;
+	--color-navy-800: #10365c;
+	--color-navy-700: #174a7d;
+	--color-ink-600: #44596f;
+	--color-ink-500: #5b7288;
+
+	--color-brand-500: #22c55e;
+	--color-brand-600: #16a34a;
+	--color-brand-700: #15803d;
+	--color-brand-100: #dcfce7;
+	--color-brand-50: #f0fdf4;
+
+	--color-skysoft-100: #e3f1fd;
+	--color-skysoft-200: #d3e9fc;
+	--color-skysoft-300: #bae6fd;
+	--color-mint-300: #6ee7b7;
+	--color-tealsoft-300: #5eead4;
+
+	--animate-fade-up: fade-up 0.7s ease-out both;
+	--animate-float-slow: float-slow 6s ease-in-out infinite;
+
+	@keyframes fade-up {
+		from {
+			opacity: 0;
+			transform: translateY(16px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes float-slow {
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-8px);
+		}
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	@apply bg-white font-sans text-navy-900 antialiased;
+}
+
+::selection {
+	background: #22c55e;
+	color: #fff;
+}
