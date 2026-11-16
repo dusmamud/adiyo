@@ -2,6 +2,7 @@
 	import PageHero from '#lib/components/PageHero.svelte';
 	import CtaBanner from '#lib/components/CtaBanner.svelte';
 	import { blogPosts } from '../../lib/data';
+	import { reveal } from '../../lib/reveal';
 </script>
 
 <svelte:head>
@@ -20,9 +21,10 @@
 
 <section class="mx-auto max-w-6xl px-4 py-14 sm:py-20">
 	<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-		{#each blogPosts as post (post.slug)}
+		{#each blogPosts as post, i (post.slug)}
 			<article
-				class="flex min-w-0 flex-col rounded-3xl bg-white p-7 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 sm:p-8"
+				use:reveal={{ delay: Math.min(i * 70, 350) }}
+				class="flex min-w-0 flex-col rounded-3xl bg-white p-7 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8"
 			>
 				<span
 					class="inline-flex w-fit rounded-full bg-brand-100 px-3 py-1 text-xs font-extrabold text-brand-700"

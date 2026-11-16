@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageHero from '#lib/components/PageHero.svelte';
+	import { reveal } from '../../lib/reveal';
 
 	let fullName = $state('');
 	let email = $state('');
@@ -70,8 +71,9 @@
 		<div class="min-w-0">
 			<h2 class="text-2xl font-extrabold text-navy-900 sm:text-3xl">What happens next</h2>
 			<ol class="mt-8 grid gap-5">
-				{#each nextSteps as item (item.step)}
+				{#each nextSteps as item, i (item.step)}
 					<li
+						use:reveal={{ delay: i * 80 }}
 						class="flex min-w-0 gap-4 rounded-3xl bg-white p-6 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5"
 					>
 						<span
@@ -92,10 +94,11 @@
 		</div>
 
 		<div
+			use:reveal
 			class="min-w-0 rounded-3xl bg-white p-6 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 sm:p-8"
 		>
 			{#if submitted}
-				<div class="rounded-2xl bg-brand-50 p-6 text-center ring-1 ring-brand-100" role="status">
+				<div class="animate-fade-up rounded-2xl bg-brand-50 p-6 text-center ring-1 ring-brand-100" role="status">
 					<p class="text-xl font-extrabold text-navy-900">
 						Demo requested — check your inbox for a calendar invite.
 					</p>
@@ -121,7 +124,7 @@
 								bind:value={fullName}
 								autocomplete="name"
 								placeholder="Your full name"
-								class="min-h-12 w-full rounded-2xl border border-navy-900/15 px-4 text-base text-navy-900 outline-none placeholder:text-ink-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
+								class="min-h-12 w-full rounded-2xl border border-navy-900/15 px-4 text-base text-navy-900 transition outline-none placeholder:text-ink-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
 							/>
 							{#if errors.fullName}<p class="mt-1.5 text-sm font-semibold text-red-600">{errors.fullName}</p>{/if}
 						</div>
@@ -133,7 +136,7 @@
 								bind:value={email}
 								autocomplete="email"
 								placeholder="you@company.com"
-								class="min-h-12 w-full rounded-2xl border border-navy-900/15 px-4 text-base text-navy-900 outline-none placeholder:text-ink-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
+								class="min-h-12 w-full rounded-2xl border border-navy-900/15 px-4 text-base text-navy-900 transition outline-none placeholder:text-ink-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
 							/>
 							{#if errors.email}<p class="mt-1.5 text-sm font-semibold text-red-600">{errors.email}</p>{/if}
 						</div>
@@ -147,7 +150,7 @@
 								bind:value={company}
 								autocomplete="organization"
 								placeholder="Company name"
-								class="min-h-12 w-full rounded-2xl border border-navy-900/15 px-4 text-base text-navy-900 outline-none placeholder:text-ink-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
+								class="min-h-12 w-full rounded-2xl border border-navy-900/15 px-4 text-base text-navy-900 transition outline-none placeholder:text-ink-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
 							/>
 							{#if errors.company}<p class="mt-1.5 text-sm font-semibold text-red-600">{errors.company}</p>{/if}
 						</div>
@@ -156,7 +159,7 @@
 							<select
 								id="demo-team-size"
 								bind:value={teamSize}
-								class="min-h-12 w-full rounded-2xl border border-navy-900/15 bg-white px-4 text-base text-navy-900 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
+								class="min-h-12 w-full rounded-2xl border border-navy-900/15 bg-white px-4 text-base text-navy-900 transition outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
 							>
 								<option value="" disabled>Select team size</option>
 								<option value="1-10">1–10</option>
@@ -176,14 +179,15 @@
 							bind:value={message}
 							rows="4"
 							placeholder="Anything we should know about your pipeline?"
-							class="min-h-12 w-full resize-y rounded-2xl border border-navy-900/15 px-4 py-3 text-base text-navy-900 outline-none placeholder:text-ink-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
+							class="min-h-12 w-full resize-y rounded-2xl border border-navy-900/15 px-4 py-3 text-base text-navy-900 transition outline-none placeholder:text-ink-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
 						></textarea>
 					</div>
 					<button
 						type="submit"
-						class="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-500 px-7 text-base font-bold text-white transition hover:bg-brand-600"
+						class="group mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-500 px-7 text-base font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
 					>
 						Request demo
+						<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
 					</button>
 				</form>
 			{/if}

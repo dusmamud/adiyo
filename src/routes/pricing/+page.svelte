@@ -2,6 +2,7 @@
 	import PageHero from '#lib/components/PageHero.svelte';
 	import CtaBanner from '#lib/components/CtaBanner.svelte';
 	import { pricingTiers, faqs } from '../../lib/data';
+	import { reveal } from '../../lib/reveal';
 </script>
 
 <svelte:head>
@@ -20,9 +21,10 @@
 
 <section class="mx-auto max-w-6xl px-4 py-14 sm:py-20">
 	<div class="grid gap-6 lg:grid-cols-3">
-		{#each pricingTiers as tier (tier.name)}
+		{#each pricingTiers as tier, i (tier.name)}
 			<article
-				class="relative flex min-w-0 flex-col rounded-3xl bg-white p-7 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 {tier.highlight
+				use:reveal={{ delay: i * 80 }}
+				class="relative flex min-w-0 flex-col rounded-3xl bg-white p-7 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl {tier.highlight
 					? 'ring-2 ring-brand-500'
 					: 'ring-navy-900/5'} sm:p-8"
 			>
@@ -64,11 +66,12 @@
 				</ul>
 				<a
 					href="/request-demo"
-					class="mt-8 inline-flex min-h-12 items-center justify-center rounded-full px-6 text-base font-bold transition {tier.highlight
+					class="group mt-8 inline-flex min-h-12 items-center justify-center rounded-full px-6 text-base font-bold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 {tier.highlight
 						? 'bg-brand-500 text-white hover:bg-brand-600'
 						: 'bg-skysoft-100 text-navy-900 hover:bg-skysoft-200'}"
 				>
 					{tier.cta}
+					<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
 				</a>
 			</article>
 		{/each}

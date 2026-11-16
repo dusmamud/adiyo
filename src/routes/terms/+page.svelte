@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageHero from '#lib/components/PageHero.svelte';
+	import { reveal } from '../../lib/reveal';
 	import { site } from '../../lib/data';
 </script>
 
@@ -19,7 +20,7 @@
 
 <article class="mx-auto max-w-3xl px-4 py-14 sm:py-20">
 	<div class="grid gap-10">
-		<section>
+		<section use:reveal>
 			<h2 class="text-2xl font-extrabold text-navy-900">Acceptable use</h2>
 			<p class="mt-3 text-base leading-relaxed text-ink-600">
 				You agree to use Adiyo lawfully and only for your own sales operations. You must not misuse
@@ -28,7 +29,7 @@
 				a per-user basis for the seats on your plan.
 			</p>
 		</section>
-		<section>
+		<section use:reveal>
 			<h2 class="text-2xl font-extrabold text-navy-900">Availability</h2>
 			<p class="mt-3 text-base leading-relaxed text-ink-600">
 				We aim to keep Adiyo available at all times, and Enterprise plans include a 99.9% uptime
@@ -37,7 +38,7 @@
 				intended as guidance for managers — final sales decisions remain yours.
 			</p>
 		</section>
-		<section>
+		<section use:reveal>
 			<h2 class="text-2xl font-extrabold text-navy-900">Liability</h2>
 			<p class="mt-3 text-base leading-relaxed text-ink-600">
 				Adiyo is provided "as is" without warranties beyond those required by law. To the fullest
@@ -46,7 +47,7 @@
 				limits liability that cannot be limited by law.
 			</p>
 		</section>
-		<section>
+		<section use:reveal>
 			<h2 class="text-2xl font-extrabold text-navy-900">Changes</h2>
 			<p class="mt-3 text-base leading-relaxed text-ink-600">
 				We may update these terms from time to time, for example when we add features or change how
@@ -55,7 +56,7 @@
 				means you accept the updated terms.
 			</p>
 		</section>
-		<section>
+		<section use:reveal>
 			<h2 class="text-2xl font-extrabold text-navy-900">Contact</h2>
 			<p class="mt-3 text-base leading-relaxed text-ink-600">
 				Questions about these terms? Email us at

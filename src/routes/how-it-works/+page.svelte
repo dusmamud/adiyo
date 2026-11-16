@@ -2,6 +2,7 @@
 	import PageHero from '#lib/components/PageHero.svelte';
 	import CtaBanner from '#lib/components/CtaBanner.svelte';
 	import { howItWorksSteps } from '../../lib/data';
+	import { reveal } from '../../lib/reveal';
 
 	const integrations = [
 		'Salesforce',
@@ -33,7 +34,8 @@
 	<div class="grid gap-6 lg:grid-cols-2">
 		{#each howItWorksSteps as item, i (item.step)}
 			<article
-				class="min-w-0 rounded-3xl bg-white p-7 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 sm:p-8 {i %
+				use:reveal={{ delay: i * 80 }}
+				class="min-w-0 rounded-3xl bg-white p-7 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8 {i %
 					2 ===
 				1
 					? 'lg:translate-y-8'
@@ -60,7 +62,7 @@
 		<ul class="mt-7 flex flex-wrap justify-center gap-3">
 			{#each integrations as name (name)}
 				<li
-					class="min-h-11 rounded-full bg-white px-5 py-2.5 text-sm font-bold text-navy-900 ring-1 ring-navy-900/10 sm:text-base"
+					class="min-h-11 rounded-full bg-white px-5 py-2.5 text-sm font-bold text-navy-900 ring-1 ring-navy-900/10 transition hover:-translate-y-0.5 sm:text-base"
 				>
 					{name}
 				</li>

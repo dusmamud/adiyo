@@ -2,6 +2,8 @@
 	import PageHero from '#lib/components/PageHero.svelte';
 	import CtaBanner from '#lib/components/CtaBanner.svelte';
 	import { managers, crmContact } from '../../lib/data';
+	import CountUp from '#lib/components/CountUp.svelte';
+	import { reveal } from '../../lib/reveal';
 
 	const values = [
 		{
@@ -23,10 +25,10 @@
 	];
 
 	const stats = [
-		{ value: '$45B', label: 'Closed-won deals influenced by deal insights' },
-		{ value: '50%', label: 'Improved win-rates across customers' },
-		{ value: '100+', label: 'Data signals analysed on every deal' },
-		{ value: '4.9/5', label: 'Manager rating' }
+		{ value: 45, prefix: '$', suffix: 'B', decimals: 0, label: 'Closed-won deals influenced by deal insights' },
+		{ value: 50, prefix: '', suffix: '%', decimals: 0, label: 'Improved win-rates across customers' },
+		{ value: 100, prefix: '', suffix: '+', decimals: 0, label: 'Data signals analysed on every deal' },
+		{ value: 4.9, prefix: '', suffix: '/5', decimals: 1, label: 'Manager rating' }
 	];
 
 	const extraTeam = [
@@ -67,8 +69,9 @@
 
 <section class="mx-auto max-w-6xl px-4 pb-14 sm:pb-20">
 	<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-		{#each values as value (value.title)}
+		{#each values as value, i (value.title)}
 			<article
+				use:reveal={{ delay: i * 80 }}
 				class="min-w-0 rounded-3xl bg-white p-6 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5"
 			>
 				<h3 class="text-lg font-extrabold text-navy-900">{value.title}</h3>
@@ -82,7 +85,7 @@
 	<div class="mx-auto grid max-w-6xl gap-8 text-center sm:grid-cols-2 lg:grid-cols-4">
 		{#each stats as stat (stat.label)}
 			<div class="min-w-0">
-				<p class="text-4xl font-extrabold text-navy-900 sm:text-5xl">{stat.value}</p>
+				<CountUp value={stat.value} prefix={stat.prefix} suffix={stat.suffix} decimals={stat.decimals} class="text-4xl font-extrabold text-navy-900 sm:text-5xl" />
 				<p class="mt-2 text-sm leading-relaxed text-ink-600 sm:text-base">{stat.label}</p>
 			</div>
 		{/each}
@@ -95,19 +98,22 @@
 		The people building Generative AI for frontline sales managers.
 	</p>
 	<div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-		{#each team as member (member.name)}
+		{#each team as member, i (member.name)}
 			<article
-				class="min-w-0 rounded-3xl bg-white p-6 text-center shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5"
+				use:reveal={{ delay: i * 80 }}
+				class="group min-w-0 rounded-3xl bg-white p-6 text-center shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5"
 			>
 				{#if member.photo}
-					<img
-						src={member.photo}
-						alt={member.name}
-						width="96"
-						height="96"
-						loading="lazy"
-						class="mx-auto h-24 w-24 rounded-full object-cover ring-4 ring-skysoft-100"
-					/>
+					<span class="mx-auto block h-24 w-24 overflow-hidden rounded-full ring-4 ring-skysoft-100">
+						<img
+							src={member.photo}
+							alt={member.name}
+							width="96"
+								height="96"
+								loading="lazy"
+								class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+						/>
+					</span>
 				{:else}
 					<span
 						class="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-brand-100 text-2xl font-extrabold text-brand-700 ring-4 ring-skysoft-100"

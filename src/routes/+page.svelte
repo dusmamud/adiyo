@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { heroStats, managers, crmContact, insightFeatures, testimonials, faqs } from '../lib/data';
+import { reveal } from '../lib/reveal';
+import CountUp from '#lib/components/CountUp.svelte';
 
 	let openIndex = $state(0);
 
@@ -29,20 +31,22 @@
 		<h1 class="mx-auto max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-tight text-navy-900 sm:text-5xl lg:text-6xl">
 			Drive More Revenue and Hit Forecasts with Generative AI
 		</h1>
-		<p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-navy-900/70 sm:text-lg">
+		<p use:reveal={{ delay: 80 }} class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-navy-900/70 sm:text-lg">
 			Get more out of your pipeline by empowering frontline sales managers with GenAI
 		</p>
 		<a
 			href="/request-demo"
-			class="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition hover:bg-brand-600"
+			use:reveal={{ delay: 160 }}
+			class="group mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
 		>
 			Request early access
+			<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
 		</a>
 
 		<!-- Desktop composition: absolutely positioned cards -->
 		<div class="relative mx-auto mt-14 hidden h-[430px] max-w-5xl lg:block">
 			<!-- Left: app-icons cluster on a mint/teal blob -->
-			<div class="absolute left-0 top-0 w-72 rounded-[2rem] bg-gradient-to-br from-mint-300/70 to-tealsoft-300/70 p-5 shadow-sm">
+			<div use:reveal={{ delay: 120 }} class="absolute left-0 top-0 w-72 rounded-[2rem] bg-gradient-to-br from-mint-300/70 to-tealsoft-300/70 p-5 shadow-sm">
 				<div class="flex flex-wrap items-center justify-center gap-3">
 					<span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow" title="Salesforce" aria-label="Salesforce">
 						<svg width="26" height="26" viewBox="0 0 24 24" fill="#00a1e0" aria-hidden="true"><path d="M7.5 18.5a4.5 4.5 0 0 1-.4-8.98 6 6 0 0 1 11.6-1.2A4 4 0 0 1 18.5 18.5h-11Z" /></svg>
@@ -59,7 +63,7 @@
 			</div>
 
 			<!-- Centre: light-blue blob with the Adiyo orb -->
-			<div class="absolute left-1/2 top-24 flex h-[190px] w-[380px] -translate-x-1/2 items-center justify-center rounded-[2rem] bg-skysoft-200/90 shadow-sm">
+			<div use:reveal={{ delay: 200 }} class="absolute left-1/2 top-24 flex h-[190px] w-[380px] -translate-x-1/2 items-center justify-center rounded-[2rem] bg-skysoft-200/90 shadow-sm">
 				<span class="flex h-24 w-24 items-center justify-center rounded-full bg-white shadow-lg">
 					<svg width="46" height="46" viewBox="0 0 32 32" fill="none" aria-hidden="true">
 						<defs>
@@ -79,22 +83,22 @@
 			</div>
 
 			<!-- Right: $45B -->
-			<div class="absolute right-0 top-0 w-56 rounded-3xl bg-white p-5 text-left shadow-lg shadow-navy-900/5">
-				<p class="text-3xl font-extrabold text-navy-900">{heroStats.closedWon}</p>
+			<div use:reveal={{ delay: 260 }} class="absolute right-0 top-0 w-56 animate-float-slow rounded-3xl bg-white p-5 text-left shadow-lg shadow-navy-900/5">
+				<CountUp value={45} prefix="$" suffix="B" class="block text-3xl font-extrabold text-navy-900" />
 				<p class="mt-1 text-xs leading-snug text-navy-900/60">{heroStats.closedWonLabel}</p>
 			</div>
 
 			<!-- Bottom-left: 50% -->
-			<div class="absolute bottom-0 left-[9%] w-52 rounded-3xl bg-white p-5 text-left shadow-lg shadow-navy-900/5">
+			<div use:reveal={{ delay: 320 }} class="absolute bottom-0 left-[9%] w-52 rounded-3xl bg-white p-5 text-left shadow-lg shadow-navy-900/5">
 				<p class="flex items-center gap-2 text-3xl font-extrabold text-navy-900">
 					<span class="flex h-6 w-6 items-center justify-center rounded-full bg-skysoft-100 text-xs text-sky-600">↗</span>
-					{heroStats.winRate}
+					<CountUp value={50} suffix="%" />
 				</p>
 				<p class="mt-1 text-xs leading-snug text-navy-900/60">{heroStats.winRateLabel}</p>
 			</div>
 
 			<!-- Bottom-right: Sales Managers -->
-			<div class="absolute bottom-2 right-[4%] w-56 rounded-3xl bg-white p-5 text-left shadow-lg shadow-navy-900/5">
+			<div use:reveal={{ delay: 380 }} class="absolute bottom-2 right-[4%] w-56 rounded-3xl bg-white p-5 text-left shadow-lg shadow-navy-900/5">
 				<p class="text-sm font-semibold text-navy-900">Sales Managers</p>
 				<div class="mt-3 flex -space-x-2">
 					{#each managers as m}
@@ -110,7 +114,7 @@
 
 		<!-- Mobile: same cards as a stacked 2-column grid -->
 		<div class="mx-auto mt-10 grid max-w-xl grid-cols-2 gap-3 lg:hidden">
-			<div class="col-span-2 flex h-32 items-center justify-center rounded-[2rem] bg-skysoft-200/90">
+			<div use:reveal={{ delay: 200 }} class="col-span-2 flex h-32 items-center justify-center rounded-[2rem] bg-skysoft-200/90">
 				<span class="flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-lg">
 					<svg width="38" height="38" viewBox="0 0 32 32" fill="none" aria-hidden="true">
 						<g stroke="#22c55e" stroke-width="4.4" stroke-linecap="round">
@@ -122,7 +126,7 @@
 					</svg>
 				</span>
 			</div>
-			<div class="col-span-2 flex flex-wrap items-center justify-center gap-3 rounded-[2rem] bg-gradient-to-br from-mint-300/70 to-tealsoft-300/70 p-4">
+			<div use:reveal={{ delay: 120 }} class="col-span-2 flex flex-wrap items-center justify-center gap-3 rounded-[2rem] bg-gradient-to-br from-mint-300/70 to-tealsoft-300/70 p-4">
 				<span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow" aria-label="Salesforce">
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="#00a1e0" aria-hidden="true"><path d="M7.5 18.5a4.5 4.5 0 0 1-.4-8.98 6 6 0 0 1 11.6-1.2A4 4 0 0 1 18.5 18.5h-11Z" /></svg>
 				</span>
@@ -135,15 +139,15 @@
 				</span>
 				<span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-xl font-extrabold text-[#4a154b] shadow" aria-label="Slack">#</span>
 			</div>
-			<div class="min-w-0 rounded-3xl bg-white p-4 text-left shadow-lg shadow-navy-900/5">
-				<p class="text-2xl font-extrabold text-navy-900">{heroStats.closedWon}</p>
+			<div use:reveal={{ delay: 260 }} class="min-w-0 animate-float-slow rounded-3xl bg-white p-4 text-left shadow-lg shadow-navy-900/5">
+				<CountUp value={45} prefix="$" suffix="B" class="block text-2xl font-extrabold text-navy-900" />
 				<p class="mt-1 text-xs leading-snug text-navy-900/60">{heroStats.closedWonLabel}</p>
 			</div>
-			<div class="min-w-0 rounded-3xl bg-white p-4 text-left shadow-lg shadow-navy-900/5">
-				<p class="text-2xl font-extrabold text-navy-900">{heroStats.winRate}</p>
+			<div use:reveal={{ delay: 320 }} class="min-w-0 rounded-3xl bg-white p-4 text-left shadow-lg shadow-navy-900/5">
+				<CountUp value={50} suffix="%" class="block text-2xl font-extrabold text-navy-900" />
 				<p class="mt-1 text-xs leading-snug text-navy-900/60">{heroStats.winRateLabel}</p>
 			</div>
-			<div class="col-span-2 flex items-center justify-between rounded-3xl bg-white p-4 text-left shadow-lg shadow-navy-900/5">
+			<div use:reveal={{ delay: 380 }} class="col-span-2 flex items-center justify-between rounded-3xl bg-white p-4 text-left shadow-lg shadow-navy-900/5">
 				<p class="text-sm font-semibold text-navy-900">Sales Managers</p>
 				<div class="flex -space-x-2">
 					{#each managers as m}
@@ -162,14 +166,14 @@
 <!-- 2. BETTER INSIGHTS, OUTCOMES -->
 <section class="bg-white px-4 py-16 sm:px-6 sm:py-20">
 	<div class="mx-auto max-w-6xl">
-		<h2 class="text-center text-4xl font-bold leading-tight tracking-tight text-navy-900 sm:text-5xl">
+		<h2 use:reveal class="text-center text-4xl font-bold leading-tight tracking-tight text-navy-900 sm:text-5xl">
 			<span class="font-extrabold">Better</span>
 			<span class="block font-light sm:inline"> Insights, Outcomes.</span>
 		</h2>
 		<div class="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-8">
-			{#each insightFeatures as f}
-				<div class="min-w-0 text-center">
-					<div class="flex items-center justify-center gap-3">
+			{#each insightFeatures as f, i}
+				<div use:reveal={{ delay: i * 80 }} class="min-w-0 text-center">
+					<div class="flex items-center justify-center gap-3 transition-transform duration-300 hover:-translate-y-1">
 						<svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
 							<g stroke="#22c55e" stroke-width="4" stroke-linecap="round">
 								<line x1="16" y1="4" x2="16" y2="28" />
@@ -202,7 +206,7 @@
 <!-- 3. SALES MANAGERS -->
 <section class="bg-white px-4 pb-16 sm:px-6 sm:pb-24">
 	<div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
-		<div class="min-w-0">
+		<div use:reveal={{ variant: 'left' }} class="min-w-0">
 			<h2 class="text-3xl font-extrabold leading-tight tracking-tight text-navy-900 sm:text-4xl lg:text-[2.75rem]">
 				Your Sales Managers are Great, Adiyo Makes Them Even Better
 			</h2>
@@ -214,18 +218,19 @@
 			</p>
 			<a
 				href="/request-demo"
-				class="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition hover:bg-brand-600"
+				class="group mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
 			>
 				Request early access
+				<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
 			</a>
 		</div>
 
-		<div class="relative min-w-0 pb-8 pl-2 sm:pl-8">
-			<div class="overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-tealsoft-300 via-mint-300 to-tealsoft-300">
+		<div use:reveal={{ variant: 'right' }} class="relative min-w-0 pb-8 pl-2 sm:pl-8">
+			<div class="group overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-tealsoft-300 via-mint-300 to-tealsoft-300">
 				<img
 					src="/images/hero-woman.webp"
 					alt="Sales manager reviewing deal insights on a tablet"
-					class="h-[380px] w-full object-cover object-top sm:h-[440px]"
+					class="h-[380px] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] sm:h-[440px]"
 				/>
 			</div>
 
@@ -251,7 +256,7 @@
 			</div>
 
 			<!-- Floating chart card -->
-			<div class="absolute -bottom-1 right-2 w-56 rounded-3xl bg-white p-4 shadow-xl shadow-navy-900/10 sm:right-4">
+			<div use:reveal class="absolute -bottom-1 right-2 w-56 rounded-3xl bg-white p-4 shadow-xl shadow-navy-900/10 sm:right-4">
 				<div class="flex items-start justify-between gap-2">
 					<p class="text-xl font-extrabold text-navy-900">4,345</p>
 					<span class="rounded-full bg-brand-100 px-2 py-0.5 text-xs font-bold text-brand-700">1.4% ↗</span>
@@ -271,6 +276,7 @@
 						stroke-width="2.5"
 						stroke-linecap="round"
 						stroke-linejoin="round"
+						class="draw-line"
 					/>
 					<circle cx="100" cy="22" r="4" fill="#0a2540" />
 				</svg>
@@ -285,7 +291,7 @@
 		<!-- CRM diagram -->
 		<div class="order-2 flex min-w-0 flex-col items-center lg:order-1">
 			<p class="text-xs font-bold uppercase tracking-[0.2em] text-navy-900/50">Your CRM</p>
-			<div class="mt-4 w-full max-w-xs rounded-3xl bg-white p-4 shadow-lg shadow-navy-900/5">
+			<div use:reveal class="mt-4 w-full max-w-xs rounded-3xl bg-white p-4 shadow-lg shadow-navy-900/5">
 				<div class="flex items-center gap-3">
 					<img src={crmContact.photo} alt={crmContact.name} class="h-14 w-14 shrink-0 rounded-full object-cover" loading="lazy" />
 					<div class="min-w-0">
@@ -299,7 +305,7 @@
 						<span class="font-bold text-navy-900">{crmContact.engagement}%</span>
 					</div>
 					<div class="mt-1.5 h-2 w-full overflow-hidden rounded-full bg-skysoft-200">
-						<div class="h-full rounded-full bg-brand-500" style="width: {crmContact.engagement}%"></div>
+						<div class="grow-bar h-full rounded-full bg-brand-500" style="width: {crmContact.engagement}%"></div>
 					</div>
 				</div>
 			</div>
@@ -351,9 +357,10 @@
 			</p>
 			<a
 				href="/request-demo"
-				class="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition hover:bg-brand-600"
+				class="group mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
 			>
 				Request early access
+				<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
 			</a>
 		</div>
 	</div>
@@ -363,10 +370,15 @@
 <section class="bg-white px-4 py-14 sm:px-6">
 	<div class="mx-auto max-w-6xl text-center">
 		<h2 class="text-xl font-bold text-navy-900 sm:text-2xl">Works with the tools your team already uses</h2>
-		<div class="mt-6 flex flex-wrap items-center justify-center gap-3">
-			{#each integrations as name}
-				<span class="inline-flex min-h-11 items-center rounded-full border border-skysoft-200 bg-white px-5 py-2.5 text-sm font-semibold text-navy-900 shadow-sm">{name}</span>
-			{/each}
+		<div class="marquee mt-6 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+			<div class="marquee-track flex w-max gap-3 pr-3">
+				{#each integrations as name}
+					<span class="inline-flex min-h-11 shrink-0 items-center rounded-full border border-skysoft-200 bg-white px-5 py-2.5 text-sm font-semibold text-navy-900 shadow-sm">{name}</span>
+				{/each}
+				{#each integrations as name}
+					<span aria-hidden="true" class="inline-flex min-h-11 shrink-0 items-center rounded-full border border-skysoft-200 bg-white px-5 py-2.5 text-sm font-semibold text-navy-900 shadow-sm">{name}</span>
+				{/each}
+			</div>
 		</div>
 	</div>
 </section>
@@ -376,8 +388,8 @@
 	<div class="mx-auto max-w-6xl">
 		<h2 class="text-center text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl">Loved by sales leaders</h2>
 		<div class="mt-10 grid gap-6 md:grid-cols-3">
-			{#each testimonials as t}
-				<figure class="flex min-w-0 flex-col rounded-3xl bg-white p-6 shadow-lg shadow-navy-900/5">
+			{#each testimonials as t, i}
+				<figure use:reveal={{ delay: i * 80 }} class="flex min-w-0 flex-col rounded-3xl bg-white p-6 shadow-lg shadow-navy-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
 					<span class="text-4xl font-extrabold leading-none text-brand-500" aria-hidden="true">“</span>
 					<blockquote class="mt-2 flex-1 text-sm leading-relaxed text-navy-900/75">{t.quote}</blockquote>
 					<figcaption class="mt-6 flex items-center gap-3">
@@ -396,7 +408,7 @@
 <!-- 7. FAQ -->
 <section class="bg-white px-4 py-16 sm:px-6 sm:py-20">
 	<div class="mx-auto max-w-3xl">
-		<h2 class="text-center text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl">Frequently asked questions</h2>
+		<h2 use:reveal class="text-center text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl">Frequently asked questions</h2>
 		<div class="mt-10 divide-y divide-skysoft-200 rounded-3xl border border-skysoft-200 bg-white px-5 shadow-sm sm:px-7">
 			{#each faqs as f, i}
 				<div class="min-w-0">
@@ -444,16 +456,17 @@
 
 <!-- 8. FINAL CTA -->
 <section class="bg-white px-4 pb-20 sm:px-6">
-	<div class="mx-auto max-w-6xl rounded-[2rem] bg-navy-950 px-6 py-14 text-center sm:py-16">
+	<div use:reveal={{ variant: 'scale' }} class="mx-auto max-w-6xl rounded-[2rem] bg-navy-950 px-6 py-14 text-center sm:py-16">
 		<h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Ready to hit your forecast?</h2>
 		<p class="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/70">
 			Join the sales teams using Adiyo to surface the insights that matter — before a deal is lost.
 		</p>
 		<a
 			href="/request-demo"
-			class="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition hover:bg-brand-600"
+			class="group mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
 		>
 			Request early access
+			<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
 		</a>
 		<p class="mt-4 text-xs text-white/50">No credit card required · 14-day free trial</p>
 	</div>

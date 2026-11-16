@@ -2,6 +2,7 @@
 	import PageHero from '#lib/components/PageHero.svelte';
 	import CtaBanner from '#lib/components/CtaBanner.svelte';
 	import { site } from '../../lib/data';
+	import { reveal } from '../../lib/reveal';
 
 	let name = $state('');
 	let email = $state('');
@@ -50,6 +51,7 @@
 <section class="mx-auto max-w-6xl px-4 py-14 sm:py-20">
 	<div class="grid gap-5 sm:grid-cols-3">
 		<a
+			use:reveal
 			href="mailto:{site.email}"
 			class="min-w-0 rounded-3xl bg-white p-6 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 transition hover:ring-brand-500"
 		>
@@ -57,6 +59,7 @@
 			<p class="mt-2 text-lg font-bold break-words text-navy-900">{site.email}</p>
 		</a>
 		<a
+			use:reveal={{ delay: 80 }}
 			href="tel:+14155550132"
 			class="min-w-0 rounded-3xl bg-white p-6 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 transition hover:ring-brand-500"
 		>
@@ -64,6 +67,7 @@
 			<p class="mt-2 text-lg font-bold text-navy-900">{site.phone}</p>
 		</a>
 		<div
+			use:reveal={{ delay: 160 }}
 			class="min-w-0 rounded-3xl bg-white p-6 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5"
 		>
 			<h2 class="text-sm font-extrabold tracking-wide text-brand-600 uppercase">Office</h2>
@@ -71,9 +75,9 @@
 		</div>
 	</div>
 
-	<div class="mx-auto mt-10 max-w-2xl rounded-3xl bg-white p-6 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 sm:p-8">
+	<div use:reveal={{ variant: 'right' }} class="mx-auto mt-10 max-w-2xl rounded-3xl bg-white p-6 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 sm:p-8">
 		{#if submitted}
-			<div class="rounded-2xl bg-brand-50 p-6 text-center ring-1 ring-brand-100" role="status">
+			<div class="animate-fade-up rounded-2xl bg-brand-50 p-6 text-center ring-1 ring-brand-100" role="status">
 				<p class="text-xl font-extrabold text-navy-900">Thanks — we'll reply within one business day.</p>
 				<p class="mt-2 text-base text-ink-600">Your message is on its way to the Adiyo team.</p>
 				<button
@@ -95,7 +99,7 @@
 							bind:value={name}
 							autocomplete="name"
 							placeholder="Your name"
-							class="min-h-12 w-full rounded-2xl border border-navy-900/15 px-4 text-base text-navy-900 outline-none placeholder:text-ink-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
+							class="min-h-12 w-full rounded-2xl border border-navy-900/15 px-4 text-base text-navy-900 transition outline-none placeholder:text-ink-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
 						/>
 						{#if errors.name}<p class="mt-1.5 text-sm font-semibold text-red-600">{errors.name}</p>{/if}
 					</div>
@@ -107,7 +111,7 @@
 							bind:value={email}
 							autocomplete="email"
 							placeholder="you@company.com"
-							class="min-h-12 w-full rounded-2xl border border-navy-900/15 px-4 text-base text-navy-900 outline-none placeholder:text-ink-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
+							class="min-h-12 w-full rounded-2xl border border-navy-900/15 px-4 text-base text-navy-900 transition outline-none placeholder:text-ink-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
 						/>
 						{#if errors.email}<p class="mt-1.5 text-sm font-semibold text-red-600">{errors.email}</p>{/if}
 					</div>
@@ -120,7 +124,7 @@
 						bind:value={company}
 						autocomplete="organization"
 						placeholder="Company name"
-						class="min-h-12 w-full rounded-2xl border border-navy-900/15 px-4 text-base text-navy-900 outline-none placeholder:text-ink-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
+						class="min-h-12 w-full rounded-2xl border border-navy-900/15 px-4 text-base text-navy-900 transition outline-none placeholder:text-ink-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
 					/>
 					{#if errors.company}<p class="mt-1.5 text-sm font-semibold text-red-600">{errors.company}</p>{/if}
 				</div>
@@ -131,15 +135,16 @@
 						bind:value={message}
 						rows="5"
 						placeholder="How can we help?"
-						class="min-h-12 w-full resize-y rounded-2xl border border-navy-900/15 px-4 py-3 text-base text-navy-900 outline-none placeholder:text-ink-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
+						class="min-h-12 w-full resize-y rounded-2xl border border-navy-900/15 px-4 py-3 text-base text-navy-900 transition outline-none placeholder:text-ink-500 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
 					></textarea>
 					{#if errors.message}<p class="mt-1.5 text-sm font-semibold text-red-600">{errors.message}</p>{/if}
 				</div>
 				<button
 					type="submit"
-					class="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-500 px-7 text-base font-bold text-white transition hover:bg-brand-600 sm:w-auto"
+					class="group mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-500 px-7 text-base font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0 sm:w-auto"
 				>
 					Send message
+					<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
 				</button>
 			</form>
 		{/if}

@@ -25,6 +25,7 @@
 
 	--animate-fade-up: fade-up 0.7s ease-out both;
 	--animate-float-slow: float-slow 6s ease-in-out infinite;
+	--animate-marquee: marquee 32s linear infinite;
 
 	@keyframes fade-up {
 		from {
@@ -46,10 +47,26 @@
 			transform: translateY(-8px);
 		}
 	}
+
+	@keyframes marquee {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-50%);
+		}
+	}
 }
 
 html {
 	scroll-behavior: smooth;
+	/* Reveal entrances use translateX(±24px); clip so they never flash a
+	   horizontal scrollbar on narrow screens mid-transition. */
+	overflow-x: clip;
+}
+
+body {
+	overflow-x: clip;
 }
 
 body {
@@ -60,3 +77,85 @@ body {
 	background: #22c55e;
 	color: #fff;
 }
+
+/* ---------- Motion system (Tier 1: pure CSS + IntersectionObserver) ----------
+   Hiding is gated behind .motion-ok, which a tiny inline script in app.html
+   adds BEFORE paint only when the visitor has NOT asked for reduced motion.
+   No JS / reduced motion / failed script => content is fully visible. */
+
+.motion-ok [data-reveal] {
+	opacity: 0;
+	transform: translateY(24px);
+	transition:
+		opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+		transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+	will-change: opacity, transform;
+}
+
+.motion-ok [data-reveal='fade'] {
+	transform: none;
+}
+
+.motion-ok [data-reveal='scale'] {
+	transform: scale(0.96);
+}
+
+.motion-ok [data-reveal='left'] {
+	transform: translateX(-24px);
+}
+
+.motion-ok [data-reveal='right'] {
+	transform: translateX(24px);
+}
+
+.motion-ok [data-reveal].is-in {
+	opacity: 1;
+	transform: none;
+}
+
+/* Chart line draw + engagement bar: transform/opacity only, triggered by .is-in */
+.motion-ok .draw-line {
+	stroke-dasharray: 320;
+	stroke-dashoffset: 320;
+	transition: stroke-dashoffset 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+
+.motion-ok .is-in .draw-line {
+	stroke-dashoffset: 0;
+}
+
+.motion-ok .grow-bar {
+	transform: scaleX(0);
+	transform-origin: left center;
+	transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+.motion-ok .is-in .grow-bar {
+	transform: scaleX(1);
+}
+
+/* Integrations marquee: seamless loop, pauses on hover */
+.marquee-track {
+	animation: marquee 32s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+	animation-play-state: paused;
+}
+
+/* Reduced motion: hard gate — everything static, content fully visible */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+
+	.marquee-track {
+		animation: none;
+	}
+}
+

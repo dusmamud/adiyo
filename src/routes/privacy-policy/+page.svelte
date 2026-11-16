@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageHero from '#lib/components/PageHero.svelte';
+	import { reveal } from '../../lib/reveal';
 	import { site } from '../../lib/data';
 </script>
 
@@ -19,7 +20,7 @@
 
 <article class="mx-auto max-w-3xl px-4 py-14 sm:py-20">
 	<div class="grid gap-10">
-		<section>
+		<section use:reveal>
 			<h2 class="text-2xl font-extrabold text-navy-900">What data we collect</h2>
 			<p class="mt-3 text-base leading-relaxed text-ink-600">
 				When you use Adiyo, we collect the information you provide — such as your name, work email
@@ -28,7 +29,7 @@
 				usage data, such as which features you use and when.
 			</p>
 		</section>
-		<section>
+		<section use:reveal>
 			<h2 class="text-2xl font-extrabold text-navy-900">How we use it</h2>
 			<p class="mt-3 text-base leading-relaxed text-ink-600">
 				We use your data to run the service: to analyse your sales communications with our
@@ -37,7 +38,7 @@
 				communications are never used to train shared models.
 			</p>
 		</section>
-		<section>
+		<section use:reveal>
 			<h2 class="text-2xl font-extrabold text-navy-900">Cookies</h2>
 			<p class="mt-3 text-base leading-relaxed text-ink-600">
 				We use essential cookies to keep you signed in and remember your preferences, and
@@ -45,7 +46,7 @@
 				non-essential cookies in your browser settings; the core product will keep working.
 			</p>
 		</section>
-		<section>
+		<section use:reveal>
 			<h2 class="text-2xl font-extrabold text-navy-900">Data retention and security</h2>
 			<p class="mt-3 text-base leading-relaxed text-ink-600">
 				Your data is stored securely and retained only for as long as your account is active or as
@@ -53,7 +54,7 @@
 				audit logs. You can request a copy or deletion of your data at any time.
 			</p>
 		</section>
-		<section>
+		<section use:reveal>
 			<h2 class="text-2xl font-extrabold text-navy-900">Contact</h2>
 			<p class="mt-3 text-base leading-relaxed text-ink-600">
 				Questions about this policy? Email us at

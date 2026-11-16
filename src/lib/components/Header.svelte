@@ -4,6 +4,16 @@
 	import { page } from '$app/state';
 
 	let menuOpen = $state(false);
+	let scrolled = $state(false);
+
+	$effect(() => {
+		const onScroll = () => {
+			scrolled = window.scrollY > 8;
+		};
+		onScroll();
+		window.addEventListener('scroll', onScroll, { passive: true });
+		return () => window.removeEventListener('scroll', onScroll);
+	});
 
 	function closeMenu() {
 		menuOpen = false;
@@ -13,7 +23,9 @@
 <header class="sticky top-3 z-50 px-3 sm:top-4 sm:px-4">
 	<div class="mx-auto max-w-5xl">
 		<div
-			class="flex min-h-14 items-center justify-between gap-2 rounded-full bg-white/95 py-2 pr-2 pl-4 shadow-[0_8px_30px_rgba(10,37,64,0.12)] ring-1 ring-navy-900/5 backdrop-blur"
+			class="flex min-h-14 items-center justify-between gap-2 rounded-full bg-white/95 py-2 pr-2 pl-4 ring-1 ring-navy-900/5 backdrop-blur transition-shadow duration-300 {scrolled
+				? 'shadow-[0_14px_40px_rgba(10,37,64,0.18)]'
+				: 'shadow-[0_8px_30px_rgba(10,37,64,0.12)]'}"
 		>
 			<Logo />
 
