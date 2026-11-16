@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Logo from '#lib/components/Logo.svelte';
-	import { site } from '../data';
+	import { navGroups, site } from '../data';
 
 	let email = $state('');
 	let subscribed = $state(false);
@@ -15,13 +15,18 @@
 		}
 		subscribed = true;
 	}
+
+	const footerColumns = navGroups.filter((g) => g.links) as {
+		label: string;
+		links: { label: string; href: string }[];
+	}[];
 </script>
 
 <footer class="bg-navy-950 text-white">
 	<div class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-		<div class="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+		<div class="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_0.85fr_0.85fr_0.85fr_0.85fr_1.3fr]">
 			<div class="min-w-0">
-				<div class="rounded-2xl bg-white px-3 py-2 inline-flex">
+				<div class="inline-flex rounded-2xl bg-white px-3 py-2">
 					<Logo />
 				</div>
 				<p class="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
@@ -34,26 +39,16 @@
 				</p>
 			</div>
 
-			<nav aria-label="Product">
-				<h3 class="text-sm font-bold tracking-wide text-white/90">Product</h3>
-				<ul class="mt-4 space-y-3 text-sm text-white/70">
-					<li><a href="/features" class="hover:text-white">Features</a></li>
-					<li><a href="/how-it-works" class="hover:text-white">How It Works</a></li>
-					<li><a href="/pricing" class="hover:text-white">Pricing</a></li>
-					<li><a href="/request-demo" class="hover:text-white">Request a Demo</a></li>
-				</ul>
-			</nav>
-
-			<nav aria-label="Company">
-				<h3 class="text-sm font-bold tracking-wide text-white/90">Company</h3>
-				<ul class="mt-4 space-y-3 text-sm text-white/70">
-					<li><a href="/about" class="hover:text-white">About Us</a></li>
-					<li><a href="/blog" class="hover:text-white">Blog</a></li>
-					<li><a href="/contact" class="hover:text-white">Contact</a></li>
-					<li><a href="/privacy-policy" class="hover:text-white">Privacy Policy</a></li>
-					<li><a href="/terms" class="hover:text-white">Terms of Service</a></li>
-				</ul>
-			</nav>
+			{#each footerColumns as col (col.label)}
+				<nav aria-label={col.label}>
+					<h3 class="text-sm font-bold tracking-wide text-white/90">{col.label}</h3>
+					<ul class="mt-4 space-y-3 text-sm text-white/70">
+						{#each col.links as link (link.href)}
+							<li><a href={link.href} class="hover:text-white">{link.label}</a></li>
+						{/each}
+					</ul>
+				</nav>
+			{/each}
 
 			<div class="min-w-0">
 				<h3 class="text-sm font-bold tracking-wide text-white/90">Sales insights, monthly</h3>
@@ -94,7 +89,12 @@
 			class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row"
 		>
 			<p>© 2026 Adiyo Inc. All rights reserved.</p>
-			<p>Built for sales teams who coach in real time.</p>
+			<nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2" aria-label="Legal">
+				<a href="/privacy-policy" class="hover:text-white">Privacy Policy</a>
+				<a href="/terms" class="hover:text-white">Terms of Service</a>
+				<a href="/cookie-policy" class="hover:text-white">Cookie Policy</a>
+				<a href="/sitemap" class="hover:text-white">Sitemap</a>
+			</nav>
 		</div>
 	</div>
 </footer>

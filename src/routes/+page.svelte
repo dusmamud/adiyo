@@ -402,6 +402,15 @@ import CountUp from '#lib/components/CountUp.svelte';
 				</figure>
 			{/each}
 		</div>
+		<p use:reveal class="mt-8 text-center">
+			<a
+				href="/customers"
+				class="group inline-flex min-h-11 items-center gap-1 text-base font-bold text-brand-600 transition hover:text-brand-700"
+			>
+				Read the full customer stories
+				<span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+			</a>
+		</p>
 	</div>
 </section>
 

@@ -6,14 +6,54 @@ export const site = {
 	phone: '+1 (415) 555-0132'
 };
 
-export const navLinks = [
-	{ label: 'Home', href: '/' },
-	{ label: 'How It Works', href: '/how-it-works' },
-	{ label: 'About Us', href: '/about' },
+export const navGroups = [
+	{
+		label: 'Product',
+		links: [
+			{ label: 'Features', href: '/features' },
+			{ label: 'How It Works', href: '/how-it-works' },
+			{ label: 'Integrations', href: '/integrations' },
+			{ label: 'Security', href: '/security' },
+			{ label: 'Compare', href: '/compare' },
+			{ label: 'Changelog', href: '/changelog' }
+		]
+	},
+	{
+		label: 'Solutions',
+		links: [
+			{ label: 'Overview', href: '/solutions' },
+			{ label: 'Sales Teams', href: '/solutions/sales-teams' },
+			{ label: 'Sales Managers', href: '/solutions/sales-managers' },
+			{ label: 'Revenue Leaders', href: '/solutions/revenue-leaders' }
+		]
+	},
 	{ label: 'Pricing', href: '/pricing' },
-	{ label: 'Features', href: '/features' },
-	{ label: 'Blog', href: '/blog' },
-	{ label: 'Contact', href: '/contact' }
+	{
+		label: 'Customers',
+		links: [
+			{ label: 'Overview', href: '/customers' },
+			{ label: 'Nimbus', href: '/customers/nimbus' },
+			{ label: 'Fieldset', href: '/customers/fieldset' },
+			{ label: 'Loopwork', href: '/customers/loopwork' }
+		]
+	},
+	{
+		label: 'Resources',
+		links: [
+			{ label: 'Overview', href: '/resources' },
+			{ label: 'Blog', href: '/blog' },
+			{ label: 'ROI Calculator', href: '/roi-calculator' },
+			{ label: 'Help Center', href: '/help' }
+		]
+	},
+	{
+		label: 'Company',
+		links: [
+			{ label: 'About Us', href: '/about' },
+			{ label: 'Careers', href: '/careers' },
+			{ label: 'Contact', href: '/contact' }
+		]
+	}
 ];
 
 export const heroStats = {
@@ -200,6 +240,225 @@ export const faqs = [
 	}
 ];
 
+export const integrations = [
+	{ name: 'Salesforce', category: 'CRM', blurb: 'Two-way sync of deals, accounts and activities. Insights write back automatically.', setup: '2-min setup' },
+	{ name: 'HubSpot', category: 'CRM', blurb: 'Pipeline, contacts and deal stages stay in sync — no duplicate entry, ever.', setup: '2-min setup' },
+	{ name: 'Gmail', category: 'Email', blurb: 'Every sales thread ingested and scored for engagement, sentiment and timing.', setup: '1-click connect' },
+	{ name: 'Outlook', category: 'Email', blurb: 'Microsoft 365 mail and calendar signals, with the same 100+ signal analysis.', setup: '1-click connect' },
+	{ name: 'Slack', category: 'Messaging', blurb: 'Trajectory alerts land in the channel where your managers already live.', setup: '1-click connect' },
+	{ name: 'WhatsApp', category: 'Messaging', blurb: 'Deal updates and coaching nudges on the channel reps actually answer.', setup: '2-min setup' },
+	{ name: 'Instagram', category: 'Social', blurb: 'Social touchpoints folded into the engagement picture for consumer-facing teams.', setup: '2-min setup' },
+	{ name: 'Zoom', category: 'Calls', blurb: 'Call recordings and transcripts analysed for buying signals and next steps.', setup: '1-click connect' },
+	{ name: 'Google Calendar', category: 'Calendar', blurb: 'Meeting cadence, attendance and follow-up timing become forecast signals.', setup: '1-click connect' },
+	{ name: 'Microsoft Teams', category: 'Messaging', blurb: 'Alerts, digests and coaching cues delivered inside Teams channels.', setup: '1-click connect' },
+	{ name: 'Outreach', category: 'Sales engagement', blurb: 'Sequences and reply data enrich deal health — see which touches move deals.', setup: '2-min setup' },
+	{ name: 'DocuSign', category: 'Documents', blurb: 'Contract-sent and signature events feed the timing signals on late-stage deals.', setup: '2-min setup' }
+];
+
+export const integrationCategories = ['All', 'CRM', 'Email', 'Messaging', 'Calls', 'Calendar', 'Social', 'Sales engagement', 'Documents'];
+
+export const solutions = [
+	{
+		slug: 'sales-teams',
+		role: 'Sales Teams',
+		title: 'For frontline sales teams',
+		subtitle: 'Every rep knows which deal needs attention today — and exactly what to do about it.',
+		pains: ['Reps guess which deals to chase', 'Follow-ups slip through the cracks', 'CRM updates eat selling time'],
+		outcomes: ['A prioritised deal list every morning', 'Next-step prompts on every deal', 'CRM updates written by Adiyo, not reps'],
+		stat: { value: '50%', label: 'improved win-rates across customer teams' }
+	},
+	{
+		slug: 'sales-managers',
+		role: 'Sales Managers',
+		title: 'For frontline sales managers',
+		subtitle: 'Coach with evidence, not gut feel. Every 1:1 starts with what changed — and what to do.',
+		pains: ['1:1s run on rep optimism, not evidence', 'At-risk deals surface too late', 'Coaching is generic, not deal-specific'],
+		outcomes: ['Real-time trajectory-change alerts', 'Specific coaching cues per deal', 'Forecast calls backed by 100+ signals'],
+		stat: { value: '3 wks', label: 'earlier warning on at-risk deals' }
+	},
+	{
+		slug: 'revenue-leaders',
+		role: 'Revenue Leaders',
+		title: 'For CROs and VP Sales',
+		subtitle: 'Commit a number the board trusts — built on what buyers did, not what sellers hope.',
+		pains: ['Forecasts miss at quarter-end', 'The board asks for a second version', 'No early view of pipeline risk'],
+		outcomes: ['Evidence-scored forecast confidence', 'Pipeline risk visible weeks ahead', 'One number, defensible in the boardroom'],
+		stat: { value: '$45B', label: 'closed-won deals influenced by Adiyo insights' }
+	}
+];
+
+export const caseStudies = [
+	{
+		slug: 'nimbus',
+		company: 'Nimbus',
+		industry: 'B2B SaaS · 45 reps',
+		person: 'Sarah Chen',
+		role: 'VP Sales, Nimbus',
+		quote:
+			'Adiyo flagged our biggest at-risk deal three weeks before the close date. We saved it — that one save paid for a year of Adiyo.',
+		metrics: [
+			{ value: '32%', label: 'lift in forecast accuracy in two quarters' },
+			{ value: '3 wks', label: 'earlier warning on the at-risk deal' },
+			{ value: '1 deal', label: 'saved — covering a full year of Adiyo' }
+		],
+		story: [
+			'Nimbus sells a cloud analytics platform to mid-market finance teams. With 45 reps and a six-figure average deal, the forecast call had become the most stressful hour of the week — and the least accurate. Reps reported confidence; the quarter reported otherwise.',
+			'The turning point was a single enterprise deal. Adiyo flagged it three weeks before the close date: the champion had gone quiet, a new stakeholder had appeared, and reply latency had doubled. The old process would have found out at the QBR — after the loss.',
+			'Sarah’s team ran the play Adiyo suggested: a direct check-in with the champion, a revised mutual close plan, and a second thread into the new stakeholder. The deal closed on the original date.',
+			'Two quarters in, Nimbus runs its forecast call off Adiyo’s confidence scores. The call is shorter, the number is more accurate, and the board has stopped asking for a second version.'
+		]
+	},
+	{
+		slug: 'fieldset',
+		company: 'Fieldset',
+		industry: 'Field services software · 28 reps',
+		person: 'Marcus Webb',
+		role: 'Sales Director, Fieldset',
+		quote:
+			'My managers stopped guessing. Every 1:1 now starts with what Adiyo surfaced — coaching got specific overnight.',
+		metrics: [
+			{ value: '50%', label: 'improved win-rates across the team' },
+			{ value: '15 min', label: 'of prep per 1:1, down from an hour' },
+			{ value: '2×', label: 'more deals coached per week' }
+		],
+		story: [
+			'Fieldset’s sales directors were drowning in 1:1 prep. Each manager owned eight reps, and every Monday meant an hour per rep just figuring out which deals to talk about. Coaching was generic because the preparation was guesswork.',
+			'Adiyo changed the starting point. Instead of opening the CRM and scanning, managers open a short list: the three deals that moved this week, the one trajectory change that matters, and the coaching cue for each.',
+			'The 1:1s got shorter and sharper. Managers ask one pointed question per deal, agree a single next step with a date, and check the signal again in 48 hours.',
+			'Win-rates are up 50% across the team — and managers say the bigger change is cultural: reps now expect specific coaching, and they bring evidence to the conversation instead of optimism.'
+		]
+	},
+	{
+		slug: 'loopwork',
+		company: 'Loopwork',
+		industry: 'Workflow automation · 60 reps',
+		person: 'Priya Nair',
+		role: 'Chief Revenue Officer, Loopwork',
+		quote:
+			'Forecast accuracy went from hopeful to reliable. The board finally trusts the number we commit.',
+		metrics: [
+			{ value: '94%', label: 'forecast accuracy, up from 71%' },
+			{ value: '0', label: 'surprise misses in the last two quarters' },
+			{ value: '40%', label: 'shorter forecast calls' }
+		],
+		story: [
+			'Loopwork had outgrown its forecast. At 60 reps across three regions, the CRO was stitching together regional numbers that disagreed with each other — and with reality. Two consecutive quarters ended with a miss nobody had seen coming.',
+			'Priya’s team connected Adiyo to Salesforce, Gmail and Zoom in a single afternoon. Within a week, the model was scoring every open deal on 100+ signals, and the regional numbers started to agree — with each other, and with the close.',
+			'The change showed up first in the forecast call: 40% shorter, because the argument about “whose number” disappeared. The score was the score, and everyone could see the signals behind it.',
+			'Forecast accuracy now runs at 94%, up from 71%. The board gets one number, committed with confidence, and Loopwork has had zero surprise misses in the last two quarters.'
+		]
+	}
+];
+
+export const changelog = [
+	{
+		version: 'v2.4',
+		date: 'Nov 12, 2026',
+		title: 'Trajectory alerts, rebuilt',
+		changes: [
+			'Alerts now explain themselves — every flag shows the three signals that moved it',
+			'Slack and Teams alerts include a one-tap “coach this deal” action',
+			'Forecast confidence scores now update intraday instead of overnight'
+		]
+	},
+	{
+		version: 'v2.3',
+		date: 'Oct 28, 2026',
+		title: 'Coaching cues for 1:1s',
+		changes: [
+			'Weekly coaching brief per rep: top 3 deals, one question each, one next step',
+			'Cues now link straight to the call transcript moment they came from',
+			'New digest email for managers who prefer inbox over dashboard'
+		]
+	},
+	{
+		version: 'v2.2',
+		date: 'Oct 7, 2026',
+		title: 'WhatsApp and Instagram signals',
+		changes: [
+			'Messaging touchpoints now count toward engagement scoring',
+			'New signal: reply latency across every channel, not just email',
+			'Two-way sync extended to HubSpot deal stages'
+		]
+	},
+	{
+		version: 'v2.1',
+		date: 'Sep 18, 2026',
+		title: 'Forecast confidence, explained',
+		changes: [
+			'Every forecast number now ships with its evidence trail',
+			'Managers can override a score — and Adiyo learns from the override',
+			'New pipeline risk view: deals grouped by drift, not just by stage'
+		]
+	},
+	{
+		version: 'v2.0',
+		date: 'Aug 26, 2026',
+		title: 'The 100-signal engine',
+		changes: [
+			'Signal coverage expanded from 40 to 100+ contextual signals',
+			'Stakeholder-change detection: new buyers, champions going quiet',
+			'Competitor-mention tracking across calls and emails'
+		]
+	},
+	{
+		version: 'v1.9',
+		date: 'Jul 30, 2026',
+		title: 'Faster setup, cleaner sync',
+		changes: [
+			'Salesforce and Gmail connect in under two minutes',
+			'CRM write-back now includes the insight summary, not just the score',
+			'Fixed: duplicate alerts when a deal moved stages twice in a day'
+		]
+	}
+];
+
+export const careers = [
+	{
+		title: 'Senior Frontend Engineer',
+		team: 'Product',
+		location: 'Remote · US',
+		type: 'Full-time',
+		blurb: 'Own the manager dashboard — Svelte, charts that explain themselves, and motion that respects the user.'
+	},
+	{
+		title: 'Sales Engineer',
+		team: 'Go-to-Market',
+		location: 'Austin, TX · Hybrid',
+		type: 'Full-time',
+		blurb: 'Run pilots on live pipelines and show sales leaders what their forecast looks like with evidence.'
+	},
+	{
+		title: 'Customer Success Manager',
+		team: 'Customer',
+		location: 'Remote · US',
+		type: 'Full-time',
+		blurb: 'Help new teams get their first trajectory alert in week one — and their first saved deal in month one.'
+	}
+];
+
+export const helpArticles = [
+	{ category: 'Getting started', title: 'Connect your CRM in under two minutes', excerpt: 'Salesforce or HubSpot, one OAuth click, and Adiyo starts reading your pipeline the same day.' },
+	{ category: 'Getting started', title: 'Invite your managers and set up teams', excerpt: 'Roles, regions and deal ownership — how to mirror your sales org inside Adiyo.' },
+	{ category: 'Insights', title: 'What is a trajectory-change alert?', excerpt: 'The moment a deal drifts, Adiyo flags it — and shows the three signals that moved.' },
+	{ category: 'Insights', title: 'How the 100+ signals are weighted', excerpt: 'No black box: every score shows its working, and managers can disagree with it.' },
+	{ category: 'Integrations', title: 'Which tools does Adiyo connect to?', excerpt: 'CRM, email, calendar, calls and messaging — the full list, and how two-way sync works.' },
+	{ category: 'Billing', title: 'How per-user pricing works', excerpt: 'Starter, Growth and Enterprise — what counts as a seat, and how trials and pilots are billed.' },
+	{ category: 'Billing', title: 'Cancel, pause or change your plan', excerpt: 'Change plans anytime from Settings. No lock-in, no cancellation calls.' },
+	{ category: 'Security', title: 'How Adiyo handles your sales data', excerpt: 'Encryption, residency, retention — and why your data never trains shared models.' }
+];
+
+export const comparisonRows = [
+	{ feature: 'Reads every sales conversation', adiyo: 'Yes', sheets: 'No', crm: 'No' },
+	{ feature: 'Flags deals the moment they drift', adiyo: 'Yes', sheets: 'No', crm: 'Partial' },
+	{ feature: '100+ contextual data signals', adiyo: 'Yes', sheets: 'No', crm: 'No' },
+	{ feature: 'Specific coaching cue per deal', adiyo: 'Yes', sheets: 'No', crm: 'No' },
+	{ feature: 'Forecast confidence, with evidence', adiyo: 'Yes', sheets: 'No', crm: 'Partial' },
+	{ feature: 'CRM updates written automatically', adiyo: 'Yes', sheets: 'No', crm: 'No' },
+	{ feature: 'Setup time', adiyo: 'Minutes', sheets: 'Hours / week', crm: 'Weeks' },
+	{ feature: 'Knows why a deal was lost', adiyo: 'Yes', sheets: 'No', crm: 'Partial' }
+];
+
 export const blogPosts = [
 	{
 		slug: 'generative-ai-sales-forecasting',
@@ -246,6 +505,55 @@ export const blogPosts = [
 			'Stakeholder signals watch for champion changes, new economic buyers and ghosting. Timing signals track deadline drift, procurement mentions and budget-cycle language.',
 			'No single signal decides a deal. The model weighs them together, the way a great manager would — and shows its working, so a manager can disagree with it. That disagreement is a feature: the manager stays in charge, the AI stays honest.',
 			'One hundred signals sounds like a lot. In practice it feels like one thing: a manager who read everything, and remembered what mattered.'
+		]
+	},
+	{
+		slug: 'ai-sales-coaching-playbook',
+		title: 'The AI Sales Coaching Playbook: 5 Moves That Actually Work',
+		excerpt:
+			'Coaching is not a skill problem, it is a timing problem. Five plays managers run the week Adiyo flags a deal — and the one question that replaces ten vague ones.',
+		date: 'Nov 12, 2026',
+		readTime: '6 min read',
+		category: 'Coaching',
+		body: [
+			'Every manager knows coaching matters. Few can say what their coaching changed this week — because most coaching happens after the fact, on a deal already lost.',
+			'The playbook starts with timing. When Adiyo flags a trajectory change, the manager has a 48-hour window where a single question can still change the outcome. The play is not a speech; it is one sharp question, one agreed next step, one date.',
+			'The five moves: check the champion first, widen the thread before you chase the close, name the drift out loud in the 1:1, agree the next step with a date attached, and re-check the signal in 48 hours — not next quarter.',
+			'What makes it work is specificity. “Push harder on this deal” is not coaching. “The champion has not replied in nine days — what do we know about the new stakeholder?” is coaching. Adiyo supplies the specific fact; the manager supplies the judgement.',
+			'Run the playbook for a month and the 1:1 changes shape: shorter, sharper, and built around evidence. That is the whole job of a frontline manager — and the whole point of the product.'
+		]
+	},
+	{
+		slug: 'forecast-accuracy-metrics-that-matter',
+		title: 'Forecast Accuracy: The 4 Metrics That Actually Matter',
+		excerpt:
+			'Win rate is a lagging indicator. If you want to know whether your forecast is trustworthy, watch these four numbers instead — and what each one tells you to fix.',
+		date: 'Nov 4, 2026',
+		readTime: '5 min read',
+		category: 'Forecasting',
+		body: [
+			'Most teams measure forecast accuracy once a quarter, after the miss. By then the metric is an autopsy. The teams with trustworthy forecasts watch four numbers weekly — and each one points at a different fix.',
+			'First, forecast variance: the gap between the committed number and the closed number, tracked weekly, not quarterly. A variance that narrows over the quarter is a healthy pipeline; one that jumps in the final week is a team reporting hope.',
+			'Second, deal drift: how many open deals changed trajectory this week, and in which direction. Drift is normal; unnoticed drift is the killer. Adiyo surfaces drift the day it happens.',
+			'Third, champion health: the share of late-stage deals with an engaged champion in the last seven days. When this number falls, the forecast is already wrong — it just does not know it yet.',
+			'Fourth, next-step coverage: the share of deals with a dated next step. A pipeline without next steps is a wish list, and wish lists do not close.',
+			'None of these metrics needs a new dashboard. They need a model that reads the conversations and tells you the truth early. That is what the forecast is for.'
+		]
+	},
+	{
+		slug: 'crm-hygiene-ai-fix',
+		title: 'Why CRM Hygiene Is a Manager Problem — and How AI Fixes It',
+		excerpt:
+			'You cannot coach reps into updating the CRM. You can remove the job entirely: let AI read the conversations and write the update itself.',
+		date: 'Oct 21, 2026',
+		readTime: '5 min read',
+		category: 'Product',
+		body: [
+			'Every sales org has the same fight: the CRM is out of date, the forecast is built on it anyway, and managers spend their week nagging reps to update fields instead of coaching deals.',
+			'The fight is unwinnable because the premise is wrong. Reps do not update the CRM because updating the CRM is not selling. It is admin, and admin loses to the next call every single time.',
+			'The fix is to remove the job, not enforce it. Adiyo reads the emails, calls and transcripts directly — then writes the CRM update itself: stage, next step, stakeholder changes, and the insight summary. The rep sells; the system documents.',
+			'Managers feel the change first. The forecast call stops being an argument about whose fields are stale, and starts being a conversation about which deals moved. Data hygiene stops being a people problem and becomes a pipeline feature.',
+			'If your CRM hygiene program is a training program, it will fail. If it is an automation program, it already worked.'
 		]
 	}
 ];
