@@ -26,7 +26,7 @@ import CountUp from '#lib/components/CountUp.svelte';
 </svelte:head>
 
 <!-- 1. HERO -->
-<section class="bg-gradient-to-b from-skysoft-100 via-skysoft-100/70 to-white px-4 pt-28 pb-16 sm:px-6 sm:pt-32 lg:pt-36">
+<section class="bg-gradient-to-b from-skysoft-100/50 via-white to-white px-4 pt-28 pb-16 sm:px-6 sm:pt-32 lg:pt-36">
 	<div class="mx-auto max-w-6xl text-center">
 		<h1 class="mx-auto max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-tight text-navy-900 sm:text-5xl lg:text-6xl">
 			Drive More Revenue and Hit Forecasts with Generative AI
@@ -43,10 +43,10 @@ import CountUp from '#lib/components/CountUp.svelte';
 			<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
 		</a>
 
-		<!-- Desktop composition: absolutely positioned cards -->
-		<div class="relative mx-auto mt-14 hidden h-[430px] max-w-5xl lg:block">
+		<!-- Desktop composition: one connected cloud — blobs and cards overlap like the reference -->
+		<div class="relative mx-auto mt-14 hidden h-[440px] max-w-5xl lg:block">
 			<!-- Left: app-icons cluster on a mint/teal blob -->
-			<div use:reveal={{ delay: 120 }} class="absolute left-0 top-0 w-72 rounded-[2rem] bg-gradient-to-br from-mint-300/70 to-tealsoft-300/70 p-5 shadow-sm">
+			<div use:reveal={{ delay: 120 }} class="absolute left-0 top-2 w-80 rounded-[2rem] bg-gradient-to-br from-mint-300/70 to-tealsoft-300/70 p-5 shadow-sm">
 				<div class="flex flex-wrap items-center justify-center gap-3">
 					<span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow" title="Salesforce" aria-label="Salesforce">
 						<svg width="26" height="26" viewBox="0 0 24 24" fill="#00a1e0" aria-hidden="true"><path d="M7.5 18.5a4.5 4.5 0 0 1-.4-8.98 6 6 0 0 1 11.6-1.2A4 4 0 0 1 18.5 18.5h-11Z" /></svg>
@@ -62,8 +62,8 @@ import CountUp from '#lib/components/CountUp.svelte';
 				</div>
 			</div>
 
-			<!-- Centre: light-blue blob with the Adiyo orb -->
-			<div use:reveal={{ delay: 200 }} class="absolute left-1/2 top-24 flex h-[190px] w-[380px] -translate-x-1/2 items-center justify-center rounded-[2rem] bg-skysoft-200/90 shadow-sm">
+			<!-- Centre: light-blue blob with the Adiyo orb (wide, tucks under the side cards) -->
+			<div use:reveal={{ delay: 200 }} class="absolute left-1/2 top-[100px] flex h-[240px] w-[560px] -translate-x-1/2 items-center justify-center rounded-[2.5rem] bg-skysoft-200/90 shadow-sm">
 				<span class="flex h-24 w-24 items-center justify-center rounded-full bg-white shadow-lg">
 					<svg width="46" height="46" viewBox="0 0 32 32" fill="none" aria-hidden="true">
 						<defs>
@@ -82,14 +82,14 @@ import CountUp from '#lib/components/CountUp.svelte';
 				</span>
 			</div>
 
-			<!-- Right: $45B -->
-			<div use:reveal={{ delay: 260 }} class="absolute right-0 top-0 w-56 animate-float-slow rounded-3xl bg-white p-5 text-left shadow-lg shadow-navy-900/5">
+			<!-- Right: $45B (overlaps the centre blob's top-right corner) -->
+			<div use:reveal={{ delay: 260 }} class="absolute top-[30px] right-[2%] z-10 w-56 animate-float-slow rounded-3xl bg-white p-5 text-left shadow-lg shadow-navy-900/5">
 				<CountUp value={45} prefix="$" suffix="B" class="block text-3xl font-extrabold text-navy-900" />
 				<p class="mt-1 text-xs leading-snug text-navy-900/60">{heroStats.closedWonLabel}</p>
 			</div>
 
-			<!-- Bottom-left: 50% -->
-			<div use:reveal={{ delay: 320 }} class="absolute bottom-0 left-[9%] w-52 rounded-3xl bg-white p-5 text-left shadow-lg shadow-navy-900/5">
+			<!-- Bottom-left: 50% (overlaps the centre blob's bottom-left corner) -->
+			<div use:reveal={{ delay: 320 }} class="absolute bottom-0 left-[8%] z-10 w-52 rounded-3xl bg-white p-5 text-left shadow-lg shadow-navy-900/5">
 				<p class="flex items-center gap-2 text-3xl font-extrabold text-navy-900">
 					<span class="flex h-6 w-6 items-center justify-center rounded-full bg-skysoft-100 text-xs text-sky-600">↗</span>
 					<CountUp value={50} suffix="%" />
@@ -97,8 +97,8 @@ import CountUp from '#lib/components/CountUp.svelte';
 				<p class="mt-1 text-xs leading-snug text-navy-900/60">{heroStats.winRateLabel}</p>
 			</div>
 
-			<!-- Bottom-right: Sales Managers -->
-			<div use:reveal={{ delay: 380 }} class="absolute bottom-2 right-[4%] w-56 rounded-3xl bg-white p-5 text-left shadow-lg shadow-navy-900/5">
+			<!-- Bottom-right: Sales Managers (overlaps the centre blob's bottom-right corner) -->
+			<div use:reveal={{ delay: 380 }} class="absolute right-[3%] bottom-2 z-10 w-56 rounded-3xl bg-white p-5 text-left shadow-lg shadow-navy-900/5">
 				<p class="text-sm font-semibold text-navy-900">Sales Managers</p>
 				<div class="mt-3 flex -space-x-2">
 					{#each managers as m}
@@ -195,11 +195,19 @@ import CountUp from '#lib/components/CountUp.svelte';
 							</span>
 						{/if}
 					</div>
-					<h3 class="mt-5 text-base font-bold text-navy-900">{f.title}</h3>
-					<p class="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-navy-900/65">{f.text}</p>
+					<p class="mx-auto mt-4 max-w-xs text-sm leading-relaxed text-navy-900/65">{f.text}</p>
 				</div>
 			{/each}
 		</div>
+		<p use:reveal class="mt-10 text-center">
+			<a
+				href="/features#interactive-demo"
+				class="group inline-flex min-h-11 items-center gap-1 text-base font-bold text-brand-600 transition hover:text-brand-700"
+			>
+				Try the interactive demo — click a deal, see the insight
+				<span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+			</a>
+		</p>
 	</div>
 </section>
 
@@ -226,7 +234,12 @@ import CountUp from '#lib/components/CountUp.svelte';
 		</div>
 
 		<div use:reveal={{ variant: 'right' }} class="relative min-w-0 pb-8 pl-2 sm:pl-8">
-			<div class="group overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-tealsoft-300 via-mint-300 to-tealsoft-300">
+			<!-- Green organic blob peeking out behind the photo's top-right corner (as in the reference) -->
+			<div
+				aria-hidden="true"
+				class="absolute -top-5 right-0 h-52 w-52 rounded-[45%_55%_60%_40%/50%_45%_55%_50%] bg-gradient-to-br from-brand-400 via-tealsoft-300 to-mint-300 sm:-right-2"
+			></div>
+			<div class="group relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-tealsoft-300 via-mint-300 to-tealsoft-300">
 				<img
 					src="/images/hero-woman.webp"
 					alt="Sales manager reviewing deal insights on a tablet"

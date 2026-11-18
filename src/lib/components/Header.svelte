@@ -67,9 +67,15 @@
 								class="invisible absolute top-full left-1/2 -translate-x-1/2 translate-y-1 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 focus-within:visible focus-within:translate-y-0 focus-within:opacity-100"
 							>
 								<div
-									class="w-60 rounded-3xl bg-white p-2 shadow-[0_16px_50px_rgba(10,37,64,0.18)] ring-1 ring-navy-900/5"
+									class="max-h-[calc(100dvh-8rem)] w-60 overflow-y-auto rounded-3xl bg-white p-2 shadow-[0_16px_50px_rgba(10,37,64,0.18)] ring-1 ring-navy-900/5"
 								>
-									{#each group.links as link (link.href)}
+									{#each group.links as link, i (link.href)}
+										{@const prevSection = i > 0 ? group.links[i - 1].section : undefined}
+										{#if link.section && link.section !== prevSection}
+											<p class="px-4 pt-3 pb-1 text-[0.65rem] font-extrabold tracking-[0.16em] text-ink-500 uppercase">
+												{link.section}
+											</p>
+										{/if}
 										<a
 											href={link.href}
 											aria-current={page.url.pathname === link.href ? 'page' : undefined}
@@ -138,7 +144,13 @@
 						<p class="px-4 pt-4 pb-1 text-xs font-extrabold tracking-[0.16em] text-ink-500 uppercase">
 							{group.label}
 						</p>
-						{#each group.links as link (link.href)}
+						{#each group.links as link, i (link.href)}
+							{@const prevSection = i > 0 ? group.links[i - 1].section : undefined}
+							{#if link.section && link.section !== prevSection}
+								<p class="px-4 pt-4 pb-1 text-xs font-extrabold tracking-[0.16em] text-ink-500 uppercase">
+									{link.section}
+								</p>
+							{/if}
 							<a
 								href={link.href}
 								onclick={closeMenu}

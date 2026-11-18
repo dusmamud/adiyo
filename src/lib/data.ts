@@ -15,7 +15,11 @@ export const navGroups = [
 			{ label: 'Integrations', href: '/integrations' },
 			{ label: 'Security', href: '/security' },
 			{ label: 'Compare', href: '/compare' },
-			{ label: 'Changelog', href: '/changelog' }
+			{ label: 'Changelog', href: '/changelog' },
+			{ label: 'Deal Insights', href: '/features/deal-insights', section: 'Capability deep dives' },
+			{ label: 'Forecast Accuracy', href: '/features/forecast-accuracy', section: 'Capability deep dives' },
+			{ label: 'Coaching Cues', href: '/features/coaching-cues', section: 'Capability deep dives' },
+			{ label: 'CRM Sync', href: '/features/crm-sync', section: 'Capability deep dives' }
 		]
 	},
 	{
@@ -24,7 +28,13 @@ export const navGroups = [
 			{ label: 'Overview', href: '/solutions' },
 			{ label: 'Sales Teams', href: '/solutions/sales-teams' },
 			{ label: 'Sales Managers', href: '/solutions/sales-managers' },
-			{ label: 'Revenue Leaders', href: '/solutions/revenue-leaders' }
+			{ label: 'Revenue Leaders', href: '/solutions/revenue-leaders' },
+			{ label: 'Startups', href: '/solutions/startups' },
+			{ label: 'Enterprise', href: '/solutions/enterprise' },
+			{ label: 'All Industries', href: '/industries', section: 'By industry' },
+			{ label: 'SaaS', href: '/industries/saas', section: 'By industry' },
+			{ label: 'FinTech', href: '/industries/fintech', section: 'By industry' },
+			{ label: 'Healthcare', href: '/industries/healthcare', section: 'By industry' }
 		]
 	},
 	{ label: 'Pricing', href: '/pricing' },
@@ -43,7 +53,11 @@ export const navGroups = [
 			{ label: 'Overview', href: '/resources' },
 			{ label: 'Blog', href: '/blog' },
 			{ label: 'ROI Calculator', href: '/roi-calculator' },
-			{ label: 'Help Center', href: '/help' }
+			{ label: 'Help Center', href: '/help' },
+			{ label: 'Documentation', href: '/docs' },
+			{ label: 'Webinars', href: '/webinars' },
+			{ label: 'Press', href: '/press' },
+			{ label: 'System Status', href: '/status' }
 		]
 	},
 	{
@@ -284,6 +298,24 @@ export const solutions = [
 		pains: ['Forecasts miss at quarter-end', 'The board asks for a second version', 'No early view of pipeline risk'],
 		outcomes: ['Evidence-scored forecast confidence', 'Pipeline risk visible weeks ahead', 'One number, defensible in the boardroom'],
 		stat: { value: '$45B', label: 'closed-won deals influenced by Adiyo insights' }
+	},
+	{
+		slug: 'startups',
+		role: 'Startups',
+		title: 'For startups finding their sales motion',
+		subtitle: 'One manager, five reps, no time for process theatre. Adiyo is the second brain a small team cannot hire yet.',
+		pains: ['No time to build a coaching process', 'Every deal is make-or-break', 'Founder still reviews every pipeline'],
+		outcomes: ['Instant deal triage from day one', 'Founder-level visibility without the founder', 'A repeatable motion before the first sales hire'],
+		stat: { value: '2 min', label: 'to connect your CRM and start seeing insights' }
+	},
+	{
+		slug: 'enterprise',
+		role: 'Enterprise',
+		title: 'For enterprise revenue organisations',
+		subtitle: 'Hundreds of reps, multiple regions, one forecast the CFO can defend. Adiyo scales the manager, not the headcount.',
+		pains: ['Forecast accuracy varies by region', 'Coaching quality depends on the manager', 'Security review blocks every new tool'],
+		outcomes: ['Consistent insight quality across regions', 'SSO, audit logs and data residency', 'Roll-up risk view for every segment'],
+		stat: { value: '99.9%', label: 'uptime SLA on the Enterprise plan' }
 	}
 ];
 
@@ -557,3 +589,241 @@ export const blogPosts = [
 		]
 	}
 ];
+
+export const capabilityPages = [
+	{
+		slug: 'deal-insights',
+		title: 'Deal Insights',
+		eyebrow: 'Capability',
+		subtitle: 'The moment a deal drifts, Adiyo tells you — and shows the three signals that moved.',
+		description:
+			'Adiyo reads every email, call and transcript in your pipeline and scores each deal against 100+ signals. When a trajectory changes — a champion goes quiet, a deadline slips, a new stakeholder appears — the insight lands with the evidence attached, not a black-box score.',
+		benefits: [
+			'Trajectory-change alerts the day it happens, not at the weekly review',
+			'Every insight shows its working — the three signals that moved',
+			'Health scores per deal, per rep and per segment',
+			'Alerts in Slack, email or the dashboard — where managers already live'
+		],
+		steps: [
+			'Connect your CRM and inbox — Adiyo starts reading the same day',
+			'Each deal gets a health score from 100+ signals',
+			'When a trajectory changes, the insight lands with the evidence'
+		],
+		stat: { value: '3 wks', label: 'earlier warning on at-risk deals' },
+		relatedCaseStudy: 'nimbus'
+	},
+	{
+		slug: 'forecast-accuracy',
+		title: 'Forecast Accuracy',
+		eyebrow: 'Capability',
+		subtitle: 'Commit a number built on what buyers did — not what sellers hope.',
+		description:
+			'Rep-reported confidence is a lagging indicator. Adiyo scores forecast confidence from buyer behaviour — engagement, stakeholder breadth, reply latency, deadline drift — and rolls it up into one defensible number, with the variance explained deal by deal.',
+		benefits: [
+			'Confidence scores per deal, backed by buyer behaviour',
+			'Variance explained — see exactly which deals the number depends on',
+			'Weekly drift tracking, so the quarter never surprises you',
+			'One committed number the board stops asking twice about'
+		],
+		steps: [
+			'Adiyo scores every open deal from 100+ buyer signals',
+			'Confidence rolls up into a single forecast number',
+			'The forecast call runs off the evidence, not the optimism'
+		],
+		stat: { value: '32%', label: 'lift in forecast accuracy in two quarters (Nimbus)' },
+		relatedCaseStudy: 'nimbus'
+	},
+	{
+		slug: 'coaching-cues',
+		title: 'Coaching Cues',
+		eyebrow: 'Capability',
+		subtitle: 'One sharp question per deal, per week — coaching that lands because it is specific.',
+		description:
+			'Generic coaching does not save deals. Adiyo hands each manager a specific cue for each deal: the fact that moved, the question to ask in the 1:1, and the single next step with a date. Managers coach the deal in front of them, not the skill in the abstract.',
+		benefits: [
+			'A specific cue per deal — fact, question, next step',
+			'1:1s start with what changed, not with a status round',
+			'Cues tracked: agreed, done, or slipped — with a 48-hour re-check',
+			'New managers coach like veterans from week one'
+		],
+		steps: [
+			'Adiyo flags the trajectory change and the fact behind it',
+			'The manager gets one sharp question and one next step',
+			'The cue is re-checked in 48 hours — done or slipped'
+		],
+		stat: { value: '50%', label: 'improved win-rates across customer teams' },
+		relatedCaseStudy: 'fieldset'
+	},
+	{
+		slug: 'crm-sync',
+		title: 'CRM Sync',
+		eyebrow: 'Capability',
+		subtitle: 'The CRM updates itself. Reps sell; Adiyo documents.',
+		description:
+			'Nobody updates the CRM because updating the CRM is not selling. Adiyo reads the conversations directly and writes the update: stage, next step, stakeholder changes and the insight summary — two-way, so the CRM stays the source of truth and the forecast stops being an argument about stale fields.',
+		benefits: [
+			'Stage, next step and stakeholder updates written automatically',
+			'Two-way sync with Salesforce and HubSpot',
+			'Insight summaries attached to the deal record',
+			'Managers stop nagging about fields and start coaching deals'
+		],
+		steps: [
+			'Connect Salesforce or HubSpot with one OAuth click',
+			'Adiyo reads emails, calls and transcripts as they happen',
+			'The CRM update writes itself — stage, steps, stakeholders'
+		],
+		stat: { value: '2 min', label: 'to connect your CRM and start syncing' },
+		relatedCaseStudy: 'loopwork'
+	}
+];
+
+export const industryPages = [
+	{
+		slug: 'saas',
+		industry: 'SaaS',
+		title: 'Adiyo for SaaS sales teams',
+		subtitle: 'High-velocity pipelines, multi-threaded deals, and a forecast that has to survive the board meeting.',
+		pains: [
+			'Expansion deals stall in the champion’s inbox',
+			'Multi-threaded accounts go quiet in one thread',
+			'Quarter-end slippage hides until the final week'
+		],
+		outcomes: [
+			'Expansion risk flagged while there is still time to save it',
+			'Thread health per stakeholder, not per account',
+			'Slippage visible weeks ahead, with the reason attached'
+		],
+		stat: { value: '32%', label: 'forecast accuracy lift (Nimbus, B2B SaaS)' },
+		example: { company: 'Nimbus', result: 'Saved its biggest at-risk deal three weeks before close — the save paid for a year of Adiyo.' }
+	},
+	{
+		slug: 'fintech',
+		industry: 'FinTech',
+		title: 'Adiyo for FinTech sales teams',
+		subtitle: 'Long cycles, procurement gates and security reviews — deals that drift quietly for months.',
+		pains: [
+			'Procurement and security reviews stall late-stage deals',
+			'Champion turnover resets months of progress',
+			'Compliance language in calls goes unnoticed'
+		],
+		outcomes: [
+			'Procurement mentions surfaced as timing signals',
+			'Champion changes flagged the week they happen',
+			'Every call and email searchable for the compliance thread'
+		],
+		stat: { value: '3 wks', label: 'earlier warning on at-risk enterprise deals' },
+		example: { company: 'Fieldset', result: 'Every 1:1 now starts with what Adiyo surfaced — coaching got specific overnight.' }
+	},
+	{
+		slug: 'healthcare',
+		industry: 'Healthcare',
+		title: 'Adiyo for Healthcare sales teams',
+		subtitle: 'Committee buying, long evaluations and clinical stakeholders — where the real decision-maker is rarely the first contact.',
+		pains: [
+			'Buying committees hide the real decision-maker',
+			'Evaluations stretch across quarters with no signal',
+			'Clinical stakeholders need different evidence than finance'
+		],
+		outcomes: [
+			'Stakeholder mapping from real conversations, not org charts',
+			'Engagement per committee member, tracked weekly',
+			'The right evidence for the right stakeholder, on time'
+		],
+		stat: { value: '50%', label: 'improved win-rates across customer teams' },
+		example: { company: 'Loopwork', result: 'Forecast accuracy went from hopeful to reliable — the board finally trusts the committed number.' }
+	}
+];
+
+export const webinars = [
+	{
+		title: 'The Forecast Call, Rebuilt: Evidence Over Optimism',
+		date: 'Dec 3, 2026 · 11:00 AM PT',
+		duration: '45 min + live Q&A',
+		speaker: 'Sarah Chen',
+		role: 'VP Sales, Nimbus',
+		status: 'upcoming',
+		topic: 'Forecasting'
+	},
+	{
+		title: 'Coaching Cues That Actually Save Deals',
+		date: 'Dec 10, 2026 · 11:00 AM PT',
+		duration: '40 min + live Q&A',
+		speaker: 'Marcus Webb',
+		role: 'Sales Director, Fieldset',
+		status: 'upcoming',
+		topic: 'Coaching'
+	},
+	{
+		title: 'Reading the 100 Signals: A Live Deal Review',
+		date: 'Nov 18, 2026',
+		duration: '52 min · recording',
+		speaker: 'Priya Nair',
+		role: 'Chief Revenue Officer, Loopwork',
+		status: 'recorded',
+		topic: 'Product'
+	},
+	{
+		title: 'CRM Hygiene Is a Manager Problem (and How AI Fixes It)',
+		date: 'Oct 29, 2026',
+		duration: '38 min · recording',
+		speaker: 'Adiyo Product Team',
+		role: 'Live walkthrough',
+		status: 'recorded',
+		topic: 'Product'
+	}
+];
+
+export const pressReleases = [
+	{
+		date: 'Nov 10, 2026',
+		title: 'Adiyo reaches $45B in closed-won deals influenced by deal insights',
+		excerpt:
+			'Customer teams using Adiyo’s trajectory-change alerts have now closed $45B in deals where an Adiyo insight influenced the outcome — three weeks earlier, on average, than the old process would have caught the risk.',
+		tag: 'Milestone'
+	},
+	{
+		date: 'Oct 21, 2026',
+		title: 'Adiyo launches Coaching Cues: specific coaching for every deal, every week',
+		excerpt:
+			'Coaching Cues turns each trajectory change into one sharp question and one dated next step — so 1:1s start with evidence, not status updates.',
+		tag: 'Product'
+	},
+	{
+		date: 'Sep 30, 2026',
+		title: 'Adiyo SOC 2 Type II and ISO 27001 certifications completed',
+		excerpt:
+			'Independent audits confirm Adiyo’s controls for data security, availability and confidentiality. Customer data is never used to train shared models.',
+		tag: 'Security'
+	}
+];
+
+export const competitorComparisons = {
+	gong: {
+		name: 'Gong',
+		tagline: 'Conversation intelligence records the call. Adiyo coaches the deal.',
+		rows: [
+			{ feature: 'Trajectory-change alerts', adiyo: 'Real-time, with the signals that moved', competitor: 'Call summaries, no deal alerts', adiyoWins: true },
+			{ feature: 'Forecast confidence scoring', adiyo: 'Built from 100+ buyer signals', competitor: 'Deal boards, rep-reported confidence', adiyoWins: true },
+			{ feature: 'Coaching cues per deal', adiyo: 'One sharp question + next step', competitor: 'Call libraries, manager reviews', adiyoWins: true },
+			{ feature: 'CRM write-back', adiyo: 'Automatic stage, steps and stakeholders', competitor: 'Manual CRM updates after calls', adiyoWins: true },
+			{ feature: 'Call recording & transcripts', adiyo: 'Via Zoom + integrations', competitor: 'Native recording platform', adiyoWins: false },
+			{ feature: 'Deal health at a glance', adiyo: 'Per deal, rep and segment', competitor: 'Per call and per rep', adiyoWins: true },
+			{ feature: 'Setup time', adiyo: '2 minutes to connect your CRM', competitor: 'Implementation project', adiyoWins: true },
+			{ feature: 'Best for', adiyo: 'Frontline managers who coach deals', competitor: 'RevOps teams analysing calls', adiyoWins: true }
+		]
+	},
+	clari: {
+		name: 'Clari',
+		tagline: 'Revenue platforms forecast the number. Adiyo explains why it moves.',
+		rows: [
+			{ feature: 'Forecast confidence scoring', adiyo: 'Explained deal by deal, with signals', competitor: 'AI forecast, limited explainability', adiyoWins: true },
+			{ feature: 'Trajectory-change alerts', adiyo: 'Real-time, the day a deal drifts', competitor: 'Weekly forecast cadence', adiyoWins: true },
+			{ feature: 'Coaching cues per deal', adiyo: 'One sharp question + next step', competitor: 'Forecast inspection, not coaching', adiyoWins: true },
+			{ feature: 'Conversation signals', adiyo: '100+ signals from emails, calls, transcripts', competitor: 'CRM activity and opportunity data', adiyoWins: true },
+			{ feature: 'Enterprise revenue platform', adiyo: 'Forecast + coaching for managers', competitor: 'Full revenue operations suite', adiyoWins: false },
+			{ feature: 'CRM write-back', adiyo: 'Automatic stage, steps and stakeholders', competitor: 'Bi-directional CRM sync', adiyoWins: true },
+			{ feature: 'Setup time', adiyo: '2 minutes to connect your CRM', competitor: 'Enterprise implementation', adiyoWins: true },
+			{ feature: 'Best for', adiyo: 'Managers who coach deals weekly', competitor: 'RevOps running the forecast process', adiyoWins: true }
+		]
+	}
+};

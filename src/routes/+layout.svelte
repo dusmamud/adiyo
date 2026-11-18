@@ -8,6 +8,22 @@
 
 	let { children }: LayoutProps = $props();
 
+	let showBackToTop = $state(false);
+
+	$effect(() => {
+		const onScroll = () => {
+			showBackToTop = window.scrollY > 600;
+		};
+		onScroll();
+		window.addEventListener('scroll', onScroll, { passive: true });
+		return () => window.removeEventListener('scroll', onScroll);
+	});
+
+	function scrollToTop() {
+		const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+	}
+
 	const orgJsonLd = {
 		'@context': 'https://schema.org',
 		'@type': 'SoftwareApplication',
@@ -37,4 +53,22 @@
 		{@render children()}
 	</main>
 	<Footer />
+	<button
+		type="button"
+		aria-label="Back to top"
+		onclick={scrollToTop}
+		class="fixed right-5 bottom-5 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-navy-900 text-white shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 {showBackToTop
+			? 'visible opacity-100'
+			: 'invisible pointer-events-none opacity-0'}"
+	>
+		<svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+			<path
+				d="M10 16V4M4.5 9.5L10 4l5.5 5.5"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			/>
+		</svg>
+	</button>
 </div>

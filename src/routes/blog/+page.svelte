@@ -3,6 +3,14 @@
 	import CtaBanner from '#lib/components/CtaBanner.svelte';
 	import { blogPosts } from '../../lib/data';
 	import { reveal } from '../../lib/reveal';
+
+	const categories = ['All', 'Forecasting', 'Coaching', 'Product'];
+
+	let selected = $state('All');
+
+	let shown = $derived(
+		selected === 'All' ? blogPosts : blogPosts.filter((post) => post.category === selected)
+	);
 </script>
 
 <svelte:head>
@@ -20,8 +28,29 @@
 />
 
 <section class="mx-auto max-w-6xl px-4 py-14 sm:py-20">
-	<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-		{#each blogPosts as post, i (post.slug)}
+	<div
+		use:reveal
+		class="flex flex-wrap items-center justify-center gap-2"
+		role="group"
+		aria-label="Filter blog posts by category"
+	>
+		{#each categories as category (category)}
+			<button
+				type="button"
+				aria-pressed={selected === category}
+				onclick={() => (selected = category)}
+				class="inline-flex min-h-11 items-center rounded-full px-5 text-sm font-bold transition-all duration-200 {selected ===
+				category
+					? 'bg-navy-900 text-white shadow-md'
+					: 'bg-white text-navy-900 ring-1 ring-navy-900/10 hover:-translate-y-0.5 hover:ring-navy-900/25'}"
+			>
+				{category}
+			</button>
+		{/each}
+	</div>
+
+	<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+		{#each shown as post, i (post.slug)}
 			<article
 				use:reveal={{ delay: Math.min(i * 70, 350) }}
 				class="flex min-w-0 flex-col rounded-3xl bg-white p-7 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8"

@@ -84,6 +84,29 @@
 		</table>
 	</div>
 
+	<div class="mt-14">
+		<h2 use:reveal class="text-center text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
+			Compare Adiyo with a named tool
+		</h2>
+		<div class="mt-8 grid gap-6 sm:grid-cols-2">
+			{#each [{ name: 'Gong', slug: 'gong', tagline: 'Conversation intelligence records the call. Adiyo coaches the deal.' }, { name: 'Clari', slug: 'clari', tagline: 'Revenue platforms forecast the number. Adiyo explains why it moves.' }] as tool, i (tool.slug)}
+				<article
+					use:reveal={{ delay: i * 80 }}
+					class="group min-w-0 rounded-3xl bg-white p-7 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8"
+				>
+					<h3 class="text-xl font-extrabold text-navy-900">Adiyo vs {tool.name}</h3>
+					<p class="mt-2 text-base leading-relaxed text-ink-600">{tool.tagline}</p>
+					<a
+						href="/compare/{tool.slug}"
+						class="mt-5 inline-flex min-h-11 items-center text-base font-bold text-brand-600 hover:text-brand-700"
+					>
+						Compare Adiyo vs {tool.name} →
+					</a>
+				</article>
+			{/each}
+		</div>
+	</div>
+
 	<div class="mt-14 grid gap-6 lg:grid-cols-3">
 		{#each verdicts as verdict, i (verdict.title)}
 			<article
