@@ -34,8 +34,8 @@
 					insights that surface at the exact moment they matter.
 				</p>
 				<p class="mt-4 text-sm text-white/70">
-					<a href="mailto:{site.email}" class="hover:text-white">{site.email}</a><br />
-					<a href="tel:+14155550132" class="hover:text-white">{site.phone}</a>
+					<a href="mailto:{site.email}" class="block w-fit py-1 hover:text-white">{site.email}</a>
+					<a href="tel:+14155550132" class="block w-fit py-1 hover:text-white">{site.phone}</a>
 				</p>
 			</div>
 
