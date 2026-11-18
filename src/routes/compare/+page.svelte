@@ -7,7 +7,7 @@
 	function cellMeta(value: string) {
 		if (value === 'Yes') return { icon: '✓', cls: 'font-bold text-brand-700' };
 		if (value === 'No') return { icon: '✗', cls: 'text-ink-500' };
-		if (value === 'Partial') return { icon: '~', cls: 'font-bold text-amber-700' };
+		if (value === 'Partial') return { icon: '~', cls: 'font-bold text-amber-800' };
 		return { icon: '', cls: 'font-semibold text-navy-900' };
 	}
 

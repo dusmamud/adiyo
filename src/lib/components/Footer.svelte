@@ -72,7 +72,7 @@
 							/>
 							<button
 								type="submit"
-								class="min-h-12 shrink-0 rounded-full bg-brand-500 px-5 text-sm font-bold text-white transition hover:bg-brand-600"
+								class="min-h-12 shrink-0 rounded-full bg-brand-500 px-5 text-sm font-bold text-navy-900 transition hover:bg-brand-600"
 							>
 								Join
 							</button>

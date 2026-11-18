@@ -57,7 +57,7 @@
 			</p>
 			<a
 				href="/contact"
-				class="mt-5 inline-flex min-h-12 items-center rounded-full bg-brand-500 px-6 text-base font-bold text-white transition hover:bg-brand-600"
+				class="mt-5 inline-flex min-h-12 items-center rounded-full bg-brand-500 px-6 text-base font-bold text-navy-900 transition hover:bg-brand-600"
 			>
 				Contact support
 			</a>
@@ -100,7 +100,7 @@
 		</p>
 		<a
 			href="/contact"
-			class="group mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-7 text-base font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
+			class="group mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-7 text-base font-bold text-navy-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
 		>
 			Contact support
 			<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
