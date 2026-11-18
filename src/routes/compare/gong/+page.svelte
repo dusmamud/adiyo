@@ -51,7 +51,7 @@
 							<span class="flex items-start gap-2 font-semibold text-navy-900">
 								{#if row.adiyoWins}
 									<svg
-										class="mt-0.5 h-5 w-5 shrink-0 text-brand-600"
+										class="mt-0.5 h-5 w-5 shrink-0 text-brand-700"
 										viewBox="0 0 20 20"
 										fill="none"
 										aria-label="Adiyo wins this row"
@@ -67,7 +67,7 @@
 									</svg>
 								{:else}
 									<svg
-										class="mt-0.5 h-5 w-5 shrink-0 text-ink-500/50"
+										class="mt-0.5 h-5 w-5 shrink-0 text-ink-500"
 										viewBox="0 0 20 20"
 										fill="none"
 										aria-label="Adiyo does not win this row"
@@ -108,7 +108,7 @@
 				{#each competitorWins as row (row.feature)}
 					<li class="flex min-w-0 items-start gap-3 rounded-2xl bg-skysoft-100 px-4 py-3">
 						<svg
-							class="mt-0.5 h-5 w-5 shrink-0 text-brand-600"
+							class="mt-0.5 h-5 w-5 shrink-0 text-brand-700"
 							viewBox="0 0 20 20"
 							fill="none"
 							aria-hidden="true"
@@ -138,7 +138,7 @@
 	<p use:reveal class="mt-4 text-center">
 		<a
 			href="/compare"
-			class="inline-flex min-h-11 items-center text-base font-bold text-brand-600 hover:text-brand-700"
+			class="inline-flex min-h-11 items-center text-base font-bold text-brand-700 hover:text-brand-700"
 		>
 			See all comparisons →
 		</a>

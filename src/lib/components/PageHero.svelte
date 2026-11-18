@@ -13,7 +13,7 @@
 <section class="bg-skysoft-100 px-4 pt-12 pb-14 sm:pt-16 sm:pb-20 rounded-b-[2.5rem]">
 	<div class="mx-auto max-w-3xl text-center">
 		{#if eyebrow}
-			<p use:reveal class="text-xs font-extrabold tracking-[0.18em] text-brand-600 uppercase sm:text-sm">
+			<p use:reveal class="text-xs font-extrabold tracking-[0.18em] text-brand-700 uppercase sm:text-sm">
 				{eyebrow}
 			</p>
 		{/if}

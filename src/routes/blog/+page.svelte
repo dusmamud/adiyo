@@ -61,7 +61,7 @@
 					{post.category}
 				</span>
 				<h2 class="mt-4 text-xl leading-snug font-extrabold text-navy-900">
-					<a href="/blog/{post.slug}" class="transition hover:text-brand-600">{post.title}</a>
+					<a href="/blog/{post.slug}" class="transition hover:text-brand-700">{post.title}</a>
 				</h2>
 				<p class="mt-2 flex-1 text-base leading-relaxed text-ink-600">{post.excerpt}</p>
 				<p class="mt-5 text-sm font-semibold text-ink-500">
@@ -69,7 +69,7 @@
 				</p>
 				<a
 					href="/blog/{post.slug}"
-					class="mt-3 inline-flex min-h-11 items-center text-base font-bold text-brand-600 hover:text-brand-700"
+					class="mt-3 inline-flex min-h-11 items-center text-base font-bold text-brand-700 hover:text-brand-700"
 				>
 					Read article →
 				</a>

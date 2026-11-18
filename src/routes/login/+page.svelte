@@ -34,7 +34,7 @@
 
 	function healthClasses(health: string): string {
 		if (health === 'Healthy') return 'bg-brand-100 text-brand-700';
-		if (health === 'At risk') return 'bg-amber-100 text-amber-700';
+		if (health === 'At risk') return 'bg-amber-100 text-amber-800';
 		return 'bg-red-100 text-red-700';
 	}
 
@@ -82,7 +82,7 @@
 	<section class="mx-auto max-w-6xl px-4 py-14 sm:py-20">
 		<div class="flex flex-wrap items-start justify-between gap-4">
 			<div use:reveal class="min-w-0">
-				<p class="text-xs font-extrabold tracking-[0.18em] text-brand-600 uppercase sm:text-sm">
+				<p class="text-xs font-extrabold tracking-[0.18em] text-brand-700 uppercase sm:text-sm">
 					Demo workspace — sample data
 				</p>
 				<h1 class="mt-3 text-3xl leading-tight font-extrabold tracking-tight text-navy-900 sm:text-4xl">
@@ -184,7 +184,7 @@
 			class="rounded-3xl bg-white p-6 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 sm:p-8"
 		>
 			<a href="/" class="text-2xl font-extrabold tracking-tight text-navy-900">
-				Adiyo<span class="text-brand-500">.</span>
+				Adiyo<span class="text-brand-700">.</span>
 			</a>
 			<h1 class="mt-5 text-3xl font-extrabold tracking-tight text-navy-900">Sign in to Adiyo</h1>
 			<p class="mt-2 text-base leading-relaxed text-ink-600">
@@ -199,7 +199,7 @@
 				<button
 					type="button"
 					onclick={fillDemo}
-					class="mt-3 inline-flex min-h-11 items-center rounded-full bg-white px-4 text-sm font-bold text-brand-600 ring-1 ring-brand-500/30 transition hover:bg-brand-50"
+					class="mt-3 inline-flex min-h-11 items-center rounded-full bg-white px-4 text-sm font-bold text-brand-700 ring-1 ring-brand-500/30 transition hover:bg-brand-50"
 				>
 					Fill demo credentials
 				</button>
@@ -235,7 +235,7 @@
 				{/if}
 				<button
 					type="submit"
-					class="group mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-500 px-7 text-base font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
+					class="group mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-500 px-7 text-base font-bold text-navy-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
 				>
 					Sign in
 					<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
@@ -243,7 +243,7 @@
 			</form>
 			<p class="mt-5 text-center text-sm text-ink-500">
 				No account yet?
-				<a href="/request-demo" class="font-bold text-brand-600 hover:text-brand-700">Request a demo</a>
+				<a href="/request-demo" class="font-bold text-brand-700 hover:text-brand-700">Request a demo</a>
 			</p>
 		</div>
 	</section>

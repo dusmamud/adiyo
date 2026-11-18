@@ -37,7 +37,7 @@ import CountUp from '#lib/components/CountUp.svelte';
 		<a
 			href="/request-demo"
 			use:reveal={{ delay: 160 }}
-			class="group mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
+			class="group mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-7 py-3.5 text-sm font-semibold text-navy-900 shadow-lg shadow-brand-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
 		>
 			Request early access
 			<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
@@ -85,16 +85,16 @@ import CountUp from '#lib/components/CountUp.svelte';
 			<!-- Right: $45B (overlaps the centre blob's top-right corner) -->
 			<div use:reveal={{ delay: 260 }} class="absolute top-[30px] right-[2%] z-10 w-56 animate-float-slow rounded-3xl bg-white p-5 text-left shadow-lg shadow-navy-900/5">
 				<CountUp value={45} prefix="$" suffix="B" class="block text-3xl font-extrabold text-navy-900" />
-				<p class="mt-1 text-xs leading-snug text-navy-900/60">{heroStats.closedWonLabel}</p>
+				<p class="mt-1 text-xs leading-snug text-navy-900/70">{heroStats.closedWonLabel}</p>
 			</div>
 
 			<!-- Bottom-left: 50% (overlaps the centre blob's bottom-left corner) -->
 			<div use:reveal={{ delay: 320 }} class="absolute bottom-0 left-[8%] z-10 w-52 rounded-3xl bg-white p-5 text-left shadow-lg shadow-navy-900/5">
 				<p class="flex items-center gap-2 text-3xl font-extrabold text-navy-900">
-					<span class="flex h-6 w-6 items-center justify-center rounded-full bg-skysoft-100 text-xs text-sky-600">↗</span>
+					<span class="flex h-6 w-6 items-center justify-center rounded-full bg-skysoft-100 text-xs text-sky-700">↗</span>
 					<CountUp value={50} suffix="%" />
 				</p>
-				<p class="mt-1 text-xs leading-snug text-navy-900/60">{heroStats.winRateLabel}</p>
+				<p class="mt-1 text-xs leading-snug text-navy-900/70">{heroStats.winRateLabel}</p>
 			</div>
 
 			<!-- Bottom-right: Sales Managers (overlaps the centre blob's bottom-right corner) -->
@@ -103,7 +103,7 @@ import CountUp from '#lib/components/CountUp.svelte';
 				<div class="mt-3 flex -space-x-2">
 					{#each managers as m}
 						{#if m.photo}
-							<img src={m.photo} alt={m.name} class="h-9 w-9 rounded-full border-2 border-white object-cover" loading="lazy" />
+							<img src={m.photo} alt={m.name} width="36" height="36" class="h-9 w-9 rounded-full border-2 border-white object-cover" loading="lazy" />
 						{:else}
 							<span class="flex h-9 w-9 items-center justify-center rounded-full border-2 border-white bg-navy-900 text-xs font-bold text-white">{m.initials}</span>
 						{/if}
@@ -141,18 +141,18 @@ import CountUp from '#lib/components/CountUp.svelte';
 			</div>
 			<div use:reveal={{ delay: 260 }} class="min-w-0 animate-float-slow rounded-3xl bg-white p-4 text-left shadow-lg shadow-navy-900/5">
 				<CountUp value={45} prefix="$" suffix="B" class="block text-2xl font-extrabold text-navy-900" />
-				<p class="mt-1 text-xs leading-snug text-navy-900/60">{heroStats.closedWonLabel}</p>
+				<p class="mt-1 text-xs leading-snug text-navy-900/70">{heroStats.closedWonLabel}</p>
 			</div>
 			<div use:reveal={{ delay: 320 }} class="min-w-0 rounded-3xl bg-white p-4 text-left shadow-lg shadow-navy-900/5">
 				<CountUp value={50} suffix="%" class="block text-2xl font-extrabold text-navy-900" />
-				<p class="mt-1 text-xs leading-snug text-navy-900/60">{heroStats.winRateLabel}</p>
+				<p class="mt-1 text-xs leading-snug text-navy-900/70">{heroStats.winRateLabel}</p>
 			</div>
 			<div use:reveal={{ delay: 380 }} class="col-span-2 flex items-center justify-between rounded-3xl bg-white p-4 text-left shadow-lg shadow-navy-900/5">
 				<p class="text-sm font-semibold text-navy-900">Sales Managers</p>
 				<div class="flex -space-x-2">
 					{#each managers as m}
 						{#if m.photo}
-							<img src={m.photo} alt={m.name} class="h-9 w-9 rounded-full border-2 border-white object-cover" loading="lazy" />
+							<img src={m.photo} alt={m.name} width="36" height="36" class="h-9 w-9 rounded-full border-2 border-white object-cover" loading="lazy" />
 						{:else}
 							<span class="flex h-9 w-9 items-center justify-center rounded-full border-2 border-white bg-navy-900 text-xs font-bold text-white">{m.initials}</span>
 						{/if}
@@ -182,7 +182,7 @@ import CountUp from '#lib/components/CountUp.svelte';
 								<line x1="24.5" y1="7.5" x2="7.5" y2="24.5" />
 							</g>
 						</svg>
-						<span class="text-lg font-light text-navy-900/40">+</span>
+						<span class="text-lg font-light text-navy-900/70">+</span>
 						{#if f.icon === 'gpt'}
 							<span class="inline-flex h-9 min-w-11 items-center justify-center rounded-full bg-brand-100 px-3 text-xs font-bold tracking-wide text-brand-700">GPT-4</span>
 						{:else if f.icon === 'signals'}
@@ -202,7 +202,7 @@ import CountUp from '#lib/components/CountUp.svelte';
 		<p use:reveal class="mt-10 text-center">
 			<a
 				href="/features#interactive-demo"
-				class="group inline-flex min-h-11 items-center gap-1 text-base font-bold text-brand-600 transition hover:text-brand-700"
+				class="group inline-flex min-h-11 items-center gap-1 text-base font-bold text-brand-700 transition hover:text-brand-700"
 			>
 				Try the interactive demo — click a deal, see the insight
 				<span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-1">→</span>
@@ -226,7 +226,7 @@ import CountUp from '#lib/components/CountUp.svelte';
 			</p>
 			<a
 				href="/request-demo"
-				class="group mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
+				class="group mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-7 py-3.5 text-sm font-semibold text-navy-900 shadow-lg shadow-brand-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
 			>
 				Request early access
 				<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
@@ -240,11 +240,28 @@ import CountUp from '#lib/components/CountUp.svelte';
 				class="absolute -top-5 right-0 h-52 w-52 rounded-[45%_55%_60%_40%/50%_45%_55%_50%] bg-gradient-to-br from-brand-400 via-tealsoft-300 to-mint-300 sm:-right-2"
 			></div>
 			<div class="group relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-tealsoft-300 via-mint-300 to-tealsoft-300">
-				<img
-					src="/images/hero-woman.webp"
-					alt="Sales manager reviewing deal insights on a tablet"
-					class="h-[380px] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] sm:h-[440px]"
-				/>
+				<picture>
+					<source
+						type="image/avif"
+						srcset="/images/hero-woman-800.avif 800w, /images/hero-woman-1200.avif 1200w"
+						sizes="(max-width: 1023px) 100vw, 600px"
+					/>
+					<source
+						type="image/webp"
+						srcset="/images/hero-woman-800.webp 800w, /images/hero-woman-1200.webp 1200w"
+						sizes="(max-width: 1023px) 100vw, 600px"
+					/>
+					<img
+						src="/images/hero-woman-1200.webp"
+						alt="Sales manager reviewing deal insights on a tablet"
+						width="1200"
+						height="800"
+						fetchpriority="high"
+						loading="eager"
+						decoding="async"
+						class="h-[380px] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] sm:h-[440px]"
+					/>
+				</picture>
 			</div>
 
 			<!-- Manager rows overlapping the left edge -->
@@ -256,13 +273,13 @@ import CountUp from '#lib/components/CountUp.svelte';
 							: ''}"
 					>
 						{#if m.photo}
-							<img src={m.photo} alt={m.name} class="h-10 w-10 shrink-0 rounded-full object-cover" loading="lazy" />
+							<img src={m.photo} alt={m.name} width="40" height="40" class="h-10 w-10 shrink-0 rounded-full object-cover" loading="lazy" />
 						{:else}
 							<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy-900 text-xs font-bold text-white">{m.initials}</span>
 						{/if}
 						<span class="min-w-0 text-left">
 							<span class="block truncate text-sm font-bold text-navy-900">{m.name}</span>
-							<span class="block truncate text-xs text-navy-900/55">{m.role}</span>
+							<span class="block truncate text-xs text-navy-900/70">{m.role}</span>
 						</span>
 					</div>
 				{/each}
@@ -280,8 +297,11 @@ import CountUp from '#lib/components/CountUp.svelte';
 							<stop offset="0" stop-color="#22c55e" stop-opacity="0.25" />
 							<stop offset="1" stop-color="#22c55e" stop-opacity="0" />
 						</linearGradient>
+						<clipPath id="chart-clip">
+							<rect class="draw-wipe" x="0" y="0" width="200" height="64" />
+						</clipPath>
 					</defs>
-					<path d="M0 52 L20 44 L40 48 L60 30 L80 38 L100 22 L120 34 L140 18 L160 26 L180 12 L200 20 L200 64 L0 64 Z" fill="url(#chart-fill)" />
+					<path d="M0 52 L20 44 L40 48 L60 30 L80 38 L100 22 L120 34 L140 18 L160 26 L180 12 L200 20 L200 64 L0 64 Z" fill="url(#chart-fill)" clip-path="url(#chart-clip)" />
 					<path
 						d="M0 52 L20 44 L40 48 L60 30 L80 38 L100 22 L120 34 L140 18 L160 26 L180 12 L200 20"
 						fill="none"
@@ -289,7 +309,7 @@ import CountUp from '#lib/components/CountUp.svelte';
 						stroke-width="2.5"
 						stroke-linecap="round"
 						stroke-linejoin="round"
-						class="draw-line"
+						clip-path="url(#chart-clip)"
 					/>
 					<circle cx="100" cy="22" r="4" fill="#0a2540" />
 				</svg>
@@ -303,17 +323,17 @@ import CountUp from '#lib/components/CountUp.svelte';
 	<div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
 		<!-- CRM diagram -->
 		<div class="order-2 flex min-w-0 flex-col items-center lg:order-1">
-			<p class="text-xs font-bold uppercase tracking-[0.2em] text-navy-900/50">Your CRM</p>
+			<p class="text-xs font-bold uppercase tracking-[0.2em] text-navy-900/70">Your CRM</p>
 			<div use:reveal class="mt-4 w-full max-w-xs rounded-3xl bg-white p-4 shadow-lg shadow-navy-900/5">
 				<div class="flex items-center gap-3">
-					<img src={crmContact.photo} alt={crmContact.name} class="h-14 w-14 shrink-0 rounded-full object-cover" loading="lazy" />
+					<img src={crmContact.photo} alt={crmContact.name} width="56" height="56" class="h-14 w-14 shrink-0 rounded-full object-cover" loading="lazy" />
 					<div class="min-w-0">
 						<p class="truncate text-sm font-bold text-navy-900">{crmContact.name}</p>
-						<p class="truncate text-xs text-navy-900/55">{crmContact.role}</p>
+						<p class="truncate text-xs text-navy-900/70">{crmContact.role}</p>
 					</div>
 				</div>
 				<div class="mt-4">
-					<div class="flex items-center justify-between text-xs text-navy-900/60">
+					<div class="flex items-center justify-between text-xs text-navy-900/70">
 						<span>Engagement level</span>
 						<span class="font-bold text-navy-900">{crmContact.engagement}%</span>
 					</div>
@@ -323,7 +343,7 @@ import CountUp from '#lib/components/CountUp.svelte';
 				</div>
 			</div>
 
-			<div class="mt-4 flex items-center gap-2 rounded-full bg-brand-500 px-4 py-2 text-xs font-semibold text-white shadow-md shadow-brand-500/25">
+			<div class="mt-4 flex items-center gap-2 rounded-full bg-brand-500 px-4 py-2 text-xs font-semibold text-navy-900 shadow-md shadow-brand-500/25">
 				<svg width="14" height="14" viewBox="0 0 32 32" fill="none" aria-hidden="true">
 					<g stroke="#fff" stroke-width="4" stroke-linecap="round">
 						<line x1="16" y1="4" x2="16" y2="28" />
@@ -370,7 +390,7 @@ import CountUp from '#lib/components/CountUp.svelte';
 			</p>
 			<a
 				href="/request-demo"
-				class="group mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
+				class="group mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-7 py-3.5 text-sm font-semibold text-navy-900 shadow-lg shadow-brand-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
 			>
 				Request early access
 				<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
@@ -403,13 +423,13 @@ import CountUp from '#lib/components/CountUp.svelte';
 		<div class="mt-10 grid gap-6 md:grid-cols-3">
 			{#each testimonials as t, i}
 				<figure use:reveal={{ delay: i * 80 }} class="flex min-w-0 flex-col rounded-3xl bg-white p-6 shadow-lg shadow-navy-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-					<span class="text-4xl font-extrabold leading-none text-brand-500" aria-hidden="true">“</span>
+					<span class="text-4xl font-extrabold leading-none text-brand-700" aria-hidden="true">“</span>
 					<blockquote class="mt-2 flex-1 text-sm leading-relaxed text-navy-900/75">{t.quote}</blockquote>
 					<figcaption class="mt-6 flex items-center gap-3">
 						<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-navy-900 text-xs font-bold text-white">{t.initials}</span>
 						<span class="min-w-0">
 							<span class="block truncate text-sm font-bold text-navy-900">{t.name}</span>
-							<span class="block truncate text-xs text-navy-900/55">{t.role}</span>
+							<span class="block truncate text-xs text-navy-900/70">{t.role}</span>
 						</span>
 					</figcaption>
 				</figure>
@@ -418,7 +438,7 @@ import CountUp from '#lib/components/CountUp.svelte';
 		<p use:reveal class="mt-8 text-center">
 			<a
 				href="/customers"
-				class="group inline-flex min-h-11 items-center gap-1 text-base font-bold text-brand-600 transition hover:text-brand-700"
+				class="group inline-flex min-h-11 items-center gap-1 text-base font-bold text-brand-700 transition hover:text-brand-700"
 			>
 				Read the full customer stories
 				<span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-1">→</span>
@@ -485,7 +505,7 @@ import CountUp from '#lib/components/CountUp.svelte';
 		</p>
 		<a
 			href="/request-demo"
-			class="group mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
+			class="group mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-500 px-8 py-3.5 text-sm font-semibold text-navy-900 shadow-lg shadow-brand-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
 		>
 			Request early access
 			<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>

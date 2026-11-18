@@ -78,15 +78,15 @@ export const heroStats = {
 };
 
 export const managers = [
-	{ name: 'Lucas Jones', role: 'CEO', photo: '/images/lucas-jones.webp', initials: 'LJ' },
-	{ name: 'Jane Miller', role: 'Chief Operations Officer', photo: '/images/jane-miller.webp', initials: 'JM' },
+	{ name: 'Lucas Jones', role: 'CEO', photo: '/images/lucas-jones-112.webp', initials: 'LJ' },
+	{ name: 'Jane Miller', role: 'Chief Operations Officer', photo: '/images/jane-miller-112.webp', initials: 'JM' },
 	{ name: 'Amy Koto', role: 'CFO', photo: null, initials: 'AK' }
 ];
 
 export const crmContact = {
 	name: 'Mia Carter',
 	role: 'Sales Director, Northwind',
-	photo: '/images/mia-carter.webp',
+	photo: '/images/mia-carter-112.webp',
 	engagement: 80
 };
 

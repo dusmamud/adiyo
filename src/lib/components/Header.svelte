@@ -45,8 +45,8 @@
 									group.links,
 									undefined
 								)
-									? 'text-brand-600'
-									: 'text-navy-900/80 hover:text-brand-600'}"
+									? 'text-brand-700'
+									: 'text-navy-900/80 hover:text-brand-700'}"
 							>
 								{group.label}
 								<svg
@@ -81,7 +81,7 @@
 											aria-current={page.url.pathname === link.href ? 'page' : undefined}
 											class="flex min-h-11 items-center rounded-2xl px-4 text-[0.95rem] font-semibold {page.url.pathname ===
 											link.href
-												? 'bg-brand-50 text-brand-600'
+												? 'bg-brand-50 text-brand-700'
 												: 'text-navy-900 hover:bg-skysoft-100'}"
 										>
 											{link.label}
@@ -96,8 +96,8 @@
 							aria-current={page.url.pathname === group.href ? 'page' : undefined}
 							class="flex min-h-11 items-center rounded-full px-3 text-[0.95rem] font-semibold transition-colors {page.url
 								.pathname === group.href
-								? 'text-brand-600'
-								: 'text-navy-900/80 hover:text-brand-600'}"
+								? 'text-brand-700'
+								: 'text-navy-900/80 hover:text-brand-700'}"
 						>
 							{group.label}
 						</a>
@@ -108,13 +108,13 @@
 			<div class="flex items-center gap-2">
 				<a
 					href="/login"
-					class="hidden min-h-11 items-center rounded-full px-3 text-sm font-bold text-navy-900 transition hover:text-brand-600 md:inline-flex"
+					class="hidden min-h-11 items-center rounded-full px-3 text-sm font-bold text-navy-900 transition hover:text-brand-700 md:inline-flex"
 				>
 					Sign in
 				</a>
 				<a
 					href="/request-demo"
-					class="hidden min-h-11 items-center rounded-full bg-brand-500 px-5 text-sm font-bold text-white shadow-sm transition hover:bg-brand-600 sm:inline-flex"
+					class="hidden min-h-11 items-center rounded-full bg-brand-500 px-5 text-sm font-bold text-navy-900 shadow-sm transition hover:bg-brand-600 sm:inline-flex"
 				>
 					Request a Demo
 				</a>
@@ -157,7 +157,7 @@
 								aria-current={page.url.pathname === link.href ? 'page' : undefined}
 								class="flex min-h-12 items-center rounded-2xl px-4 text-[1rem] font-semibold {page.url
 									.pathname === link.href
-									? 'bg-brand-50 text-brand-600'
+									? 'bg-brand-50 text-brand-700'
 									: 'text-navy-900 hover:bg-skysoft-100'}"
 							>
 								{link.label}
@@ -170,7 +170,7 @@
 							aria-current={page.url.pathname === group.href ? 'page' : undefined}
 							class="mt-2 flex min-h-12 items-center rounded-2xl px-4 text-[1rem] font-semibold {page.url
 								.pathname === group.href
-								? 'bg-brand-50 text-brand-600'
+								? 'bg-brand-50 text-brand-700'
 								: 'text-navy-900 hover:bg-skysoft-100'}"
 						>
 							{group.label}
@@ -188,7 +188,7 @@
 					<a
 						href="/request-demo"
 						onclick={closeMenu}
-						class="flex min-h-12 flex-1 items-center justify-center rounded-full bg-brand-500 px-5 text-[1rem] font-bold text-white"
+						class="flex min-h-12 flex-1 items-center justify-center rounded-full bg-brand-500 px-5 text-[1rem] font-bold text-navy-900"
 					>
 						Request a Demo
 					</a>

@@ -28,7 +28,7 @@
 		aria-label="Customer companies"
 	>
 		{#each companies as company (company)}
-			<span class="text-3xl font-extrabold tracking-tight text-navy-900/25 sm:text-4xl">{company}</span>
+			<span class="text-3xl font-extrabold tracking-tight text-navy-900/70 sm:text-4xl">{company}</span>
 		{/each}
 	</div>
 </section>
@@ -42,7 +42,7 @@
 			>
 				<div class="flex min-w-0 items-baseline justify-between gap-3">
 					<h2 class="min-w-0 text-2xl font-extrabold tracking-tight text-navy-900">{study.company}</h2>
-					<span class="shrink-0 text-xs font-extrabold text-brand-600 uppercase">{study.industry.split(' · ')[0]}</span>
+					<span class="shrink-0 text-xs font-extrabold text-brand-700 uppercase">{study.industry.split(' · ')[0]}</span>
 				</div>
 				<p class="mt-1 text-sm font-semibold text-ink-500">{study.industry}</p>
 				<blockquote class="mt-4 flex-1 text-base leading-relaxed text-ink-600">
@@ -54,7 +54,7 @@
 				</div>
 				<a
 					href="/customers/{study.slug}"
-					class="mt-6 inline-flex min-h-11 items-center text-base font-bold text-brand-600 hover:text-brand-700"
+					class="mt-6 inline-flex min-h-11 items-center text-base font-bold text-brand-700 hover:text-brand-700"
 				>
 					Read the story
 					<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"

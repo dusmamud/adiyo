@@ -21,7 +21,7 @@
 	<div use:reveal>
 		<a
 			href="/customers"
-			class="inline-flex min-h-11 items-center text-base font-bold text-brand-600 hover:text-brand-700"
+			class="inline-flex min-h-11 items-center text-base font-bold text-brand-700 hover:text-brand-700"
 		>
 			← All customers
 		</a>
@@ -86,12 +86,12 @@
 				use:reveal={{ delay: i * 80 }}
 				class="group block min-w-0 rounded-3xl bg-white p-7 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8"
 			>
-				<p class="text-xs font-extrabold tracking-[0.18em] text-brand-600 uppercase sm:text-sm">
+				<p class="text-xs font-extrabold tracking-[0.18em] text-brand-700 uppercase sm:text-sm">
 					{item.industry}
 				</p>
 				<h3 class="mt-3 text-xl font-extrabold text-navy-900">{item.company}</h3>
 				<p class="mt-2 line-clamp-2 text-base leading-relaxed text-ink-600">“{item.quote}”</p>
-				<span class="mt-4 inline-flex min-h-11 items-center text-base font-bold text-brand-600">
+				<span class="mt-4 inline-flex min-h-11 items-center text-base font-bold text-brand-700">
 					Read the story
 					<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"
 						>→</span

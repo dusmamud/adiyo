@@ -1,4 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/plus-jakarta-sans-400.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('/fonts/plus-jakarta-sans-500.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url('/fonts/plus-jakarta-sans-600.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('/fonts/plus-jakarta-sans-700.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	font-style: normal;
+	font-weight: 800;
+	font-display: swap;
+	src: url('/fonts/plus-jakarta-sans-800.woff2') format('woff2');
+}
 @import 'tailwindcss';
 
 @theme {
@@ -113,15 +147,18 @@ body {
 	transform: none;
 }
 
-/* Chart line draw + engagement bar: transform/opacity only, triggered by .is-in */
-.motion-ok .draw-line {
-	stroke-dasharray: 320;
-	stroke-dashoffset: 320;
-	transition: stroke-dashoffset 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+/* Chart line wipe + engagement bar: transform/opacity only, triggered by .is-in.
+   The wipe uses a scaling clip rect — stroke-dashoffset is not composited,
+   so the old line-draw was flagged by PageSpeed. Same 1.2s timing. */
+.motion-ok .draw-wipe {
+	transform: scaleX(0);
+	transform-box: fill-box;
+	transform-origin: left center;
+	transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
 }
 
-.motion-ok .is-in .draw-line {
-	stroke-dashoffset: 0;
+.motion-ok .is-in .draw-wipe {
+	transform: scaleX(1);
 }
 
 .motion-ok .grow-bar {

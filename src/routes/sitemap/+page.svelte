@@ -61,7 +61,7 @@
 							<li class="min-w-0">
 								<a
 									href={link.href}
-									class="inline-flex min-h-11 items-center text-base font-semibold text-ink-600 transition hover:text-brand-600"
+									class="inline-flex min-h-11 items-center text-base font-semibold text-ink-600 transition hover:text-brand-700"
 								>
 									{link.label}
 								</a>
@@ -77,7 +77,7 @@
 					<h2 class="text-xl font-extrabold text-navy-900">{group.label}</h2>
 					<a
 						href={group.href}
-						class="mt-4 inline-flex min-h-11 items-center text-base font-bold text-brand-600 transition hover:text-brand-700"
+						class="mt-4 inline-flex min-h-11 items-center text-base font-bold text-brand-700 transition hover:text-brand-700"
 					>
 						See {group.label.toLowerCase()} →
 					</a>

@@ -174,7 +174,7 @@
 						subscribed = false;
 						email = '';
 					}}
-					class="mt-5 inline-flex min-h-11 items-center rounded-full bg-brand-500 px-6 text-sm font-bold text-white transition hover:bg-brand-600"
+					class="mt-5 inline-flex min-h-11 items-center rounded-full bg-brand-500 px-6 text-sm font-bold text-navy-900 transition hover:bg-brand-600"
 				>
 					Subscribe another email
 				</button>
@@ -195,7 +195,7 @@
 				</div>
 				<button
 					type="submit"
-					class="inline-flex min-h-12 shrink-0 items-center justify-center rounded-full bg-brand-500 px-7 text-base font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
+					class="inline-flex min-h-12 shrink-0 items-center justify-center rounded-full bg-brand-500 px-7 text-base font-bold text-navy-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
 				>
 					Subscribe
 				</button>
@@ -205,6 +205,6 @@
 
 	<p use:reveal class="mt-10 text-center text-base text-ink-500">
 		Seeing something wrong right now?
-		<a href="/contact" class="font-bold text-brand-600 hover:text-brand-700">Contact support →</a>
+		<a href="/contact" class="font-bold text-brand-700 hover:text-brand-700">Contact support →</a>
 	</p>
 </section>

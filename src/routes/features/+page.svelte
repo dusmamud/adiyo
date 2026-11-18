@@ -185,12 +185,12 @@
 				use:reveal={{ delay: Math.min(i * 70, 280) }}
 				class="group block min-w-0 rounded-3xl bg-white p-7 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
 			>
-				<p class="text-xs font-extrabold tracking-[0.18em] text-brand-600 uppercase sm:text-sm">
+				<p class="text-xs font-extrabold tracking-[0.18em] text-brand-700 uppercase sm:text-sm">
 					{item.eyebrow}
 				</p>
 				<h3 class="mt-3 text-xl font-extrabold text-navy-900">{item.title}</h3>
 				<p class="mt-2 text-base leading-relaxed text-ink-600">{item.subtitle}</p>
-				<span class="mt-4 inline-flex min-h-11 items-center text-base font-bold text-brand-600">
+				<span class="mt-4 inline-flex min-h-11 items-center text-base font-bold text-brand-700">
 					Explore {item.title}
 					<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"
 						>→</span
@@ -258,8 +258,8 @@
 						'Healthy'
 							? 'bg-brand-100 text-brand-700'
 							: selectedDeal.health === 'At risk'
-								? 'bg-rose-100 text-rose-600'
-								: 'bg-amber-100 text-amber-700'}"
+								? 'bg-rose-100 text-rose-700'
+								: 'bg-amber-100 text-amber-800'}"
 					>
 						{selectedDeal.health}
 					</span>

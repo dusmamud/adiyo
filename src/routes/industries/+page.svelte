@@ -41,7 +41,7 @@
 				use:reveal={{ delay: i * 80 }}
 				class="group flex min-w-0 flex-col rounded-3xl bg-white p-7 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8"
 			>
-				<p class="text-xs font-extrabold tracking-[0.18em] text-brand-600 uppercase sm:text-sm">
+				<p class="text-xs font-extrabold tracking-[0.18em] text-brand-700 uppercase sm:text-sm">
 					{page.industry}
 				</p>
 				<h2 class="mt-3 text-2xl leading-tight font-extrabold tracking-tight text-navy-900">
@@ -54,7 +54,7 @@
 				</div>
 				<a
 					href="/industries/{page.slug}"
-					class="mt-6 inline-flex min-h-11 items-center text-base font-bold text-brand-600 hover:text-brand-700"
+					class="mt-6 inline-flex min-h-11 items-center text-base font-bold text-brand-700 hover:text-brand-700"
 				>
 					Explore {page.industry}
 					<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"

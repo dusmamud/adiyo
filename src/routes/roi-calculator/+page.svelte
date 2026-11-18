@@ -134,9 +134,9 @@
 						Extra deals won per quarter
 					</p>
 					<p class="mt-2 text-5xl font-extrabold tracking-tight text-white">
-						{#key extraDeals}
+						
 							<CountUp value={extraDeals} decimals={1} />
-						{/key}
+						
 					</p>
 					<p class="mt-2 text-base text-white/70">
 						From {reps * dealsPerRep} deals a quarter, at a {newWinRate}% win rate instead of {winRate}%.
@@ -151,13 +151,13 @@
 						Additional revenue per quarter
 					</p>
 					<p class="mt-2 text-5xl font-extrabold tracking-tight text-navy-900">
-						{#key quarterlyRevenue}
+						
 							{#if quarterlyRevenue >= 1000}
 								<CountUp value={quarterlyRevenue / 1000} prefix="$" suffix="K" decimals={0} />
 							{:else}
 								<CountUp value={quarterlyRevenue} prefix="$" decimals={0} />
 							{/if}
-						{/key}
+						
 					</p>
 				</div>
 
@@ -168,14 +168,14 @@
 					<p class="text-sm font-extrabold tracking-[0.14em] text-ink-500 uppercase">
 						Additional revenue per year
 					</p>
-					<p class="mt-2 text-5xl font-extrabold tracking-tight text-brand-600">
-						{#key annualRevenue}
+					<p class="mt-2 text-5xl font-extrabold tracking-tight text-brand-700">
+						
 							{#if annualRevenue >= 1000}
 								<CountUp value={annualRevenue / 1000} prefix="$" suffix="K" decimals={0} />
 							{:else}
 								<CountUp value={annualRevenue} prefix="$" decimals={0} />
 							{/if}
-						{/key}
+						
 					</p>
 				</div>
 			</div>

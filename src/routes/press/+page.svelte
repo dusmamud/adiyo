@@ -64,7 +64,7 @@
 			</ul>
 			<a
 				href="/about"
-				class="mt-6 inline-flex min-h-11 items-center text-base font-bold text-white underline decoration-brand-500 decoration-2 underline-offset-4 hover:text-brand-500"
+				class="mt-6 inline-flex min-h-11 items-center text-base font-bold text-white underline decoration-brand-500 decoration-2 underline-offset-4 hover:text-brand-700"
 			>
 				Read our story on the About page →
 			</a>
@@ -80,20 +80,20 @@
 			</p>
 			<p class="mt-5 text-base text-ink-600">
 				Email
-				<a href="mailto:{site.email}" class="font-bold text-brand-600 hover:text-brand-700">
+				<a href="mailto:{site.email}" class="font-bold text-brand-700 hover:text-brand-700">
 					{site.email}
 				</a>
 			</p>
 			<p class="mt-2 text-base text-ink-600">
 				Phone
-				<a href="tel:+14155550132" class="font-bold text-brand-600 hover:text-brand-700">
+				<a href="tel:+14155550132" class="font-bold text-brand-700 hover:text-brand-700">
 					+1 (415) 555-0132
 				</a>
 			</p>
 			<p class="mt-5 text-sm leading-relaxed text-ink-500">
 				We reply to press enquiries within one working day. For product questions, the Help Center
 				answers most of them faster.
-				<a href="/help" class="font-bold text-brand-600 hover:text-brand-700">Visit Help Center →</a>
+				<a href="/help" class="font-bold text-brand-700 hover:text-brand-700">Visit Help Center →</a>
 			</p>
 		</div>
 	</div>

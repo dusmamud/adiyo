@@ -55,7 +55,7 @@
 			href="mailto:{site.email}"
 			class="min-w-0 rounded-3xl bg-white p-6 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 transition hover:ring-brand-500"
 		>
-			<h2 class="text-sm font-extrabold tracking-wide text-brand-600 uppercase">Email</h2>
+			<h2 class="text-sm font-extrabold tracking-wide text-brand-700 uppercase">Email</h2>
 			<p class="mt-2 text-lg font-bold break-words text-navy-900">{site.email}</p>
 		</a>
 		<a
@@ -63,14 +63,14 @@
 			href="tel:+14155550132"
 			class="min-w-0 rounded-3xl bg-white p-6 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 transition hover:ring-brand-500"
 		>
-			<h2 class="text-sm font-extrabold tracking-wide text-brand-600 uppercase">Phone</h2>
+			<h2 class="text-sm font-extrabold tracking-wide text-brand-700 uppercase">Phone</h2>
 			<p class="mt-2 text-lg font-bold text-navy-900">{site.phone}</p>
 		</a>
 		<div
 			use:reveal={{ delay: 160 }}
 			class="min-w-0 rounded-3xl bg-white p-6 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5"
 		>
-			<h2 class="text-sm font-extrabold tracking-wide text-brand-600 uppercase">Office</h2>
+			<h2 class="text-sm font-extrabold tracking-wide text-brand-700 uppercase">Office</h2>
 			<p class="mt-2 text-lg font-bold text-navy-900">548 Market St, San Francisco, CA 94104</p>
 		</div>
 	</div>
@@ -83,7 +83,7 @@
 				<button
 					type="button"
 					onclick={() => (submitted = false)}
-					class="mt-5 inline-flex min-h-11 items-center rounded-full bg-brand-500 px-6 text-sm font-bold text-white transition hover:bg-brand-600"
+					class="mt-5 inline-flex min-h-11 items-center rounded-full bg-brand-500 px-6 text-sm font-bold text-navy-900 transition hover:bg-brand-600"
 				>
 					Send another message
 				</button>
@@ -141,7 +141,7 @@
 				</div>
 				<button
 					type="submit"
-					class="group mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-500 px-7 text-base font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0 sm:w-auto"
+					class="group mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-500 px-7 text-base font-bold text-navy-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0 sm:w-auto"
 				>
 					Send message
 					<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>

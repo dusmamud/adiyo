@@ -7,7 +7,7 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
 
-const BASE = 'http://127.0.0.1:4177'; // 4173 luxury-furniture, 4174 MSY Law, 4176 aurelia — do not kill other projects' previews
+const BASE = 'http://127.0.0.1:4178'; // 4177 is MSY Law's preview (other project — do not kill); Adiyo preview moved here
 const results = [];
 const check = (name, ok, detail = '') => {
 	results.push({ name, ok, detail });

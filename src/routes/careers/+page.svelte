@@ -103,7 +103,7 @@
 				<p class="mt-3 flex-1 text-base leading-relaxed text-ink-600">{job.blurb}</p>
 				<a
 					href="#apply"
-					class="mt-5 inline-flex min-h-11 items-center text-base font-bold text-brand-600 hover:text-brand-700"
+					class="mt-5 inline-flex min-h-11 items-center text-base font-bold text-brand-700 hover:text-brand-700"
 				>
 					Apply for this role →
 				</a>
@@ -131,7 +131,7 @@
 				<button
 					type="button"
 					onclick={() => (submitted = false)}
-					class="mt-5 inline-flex min-h-11 items-center rounded-full bg-brand-500 px-6 text-sm font-bold text-white transition hover:bg-brand-600"
+					class="mt-5 inline-flex min-h-11 items-center rounded-full bg-brand-500 px-6 text-sm font-bold text-navy-900 transition hover:bg-brand-600"
 				>
 					Apply for another role
 				</button>
@@ -192,7 +192,7 @@
 				</div>
 				<button
 					type="submit"
-					class="group mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-500 px-7 text-base font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
+					class="group mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-500 px-7 text-base font-bold text-navy-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
 				>
 					Submit application
 					<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
@@ -201,7 +201,7 @@
 		{/if}
 		<p class="mt-5 text-center text-sm text-ink-500">
 			Prefer email? Write to
-			<a href="mailto:{site.email}" class="font-bold text-brand-600 hover:text-brand-700">{site.email}</a>
+			<a href="mailto:{site.email}" class="font-bold text-brand-700 hover:text-brand-700">{site.email}</a>
 		</p>
 	</div>
 </section>

@@ -79,7 +79,7 @@
 						email = '';
 						selectedWebinar = '';
 					}}
-					class="mt-5 inline-flex min-h-11 items-center rounded-full bg-brand-500 px-6 text-sm font-bold text-white transition hover:bg-brand-600"
+					class="mt-5 inline-flex min-h-11 items-center rounded-full bg-brand-500 px-6 text-sm font-bold text-navy-900 transition hover:bg-brand-600"
 				>
 					Register for another webinar
 				</button>
@@ -126,7 +126,7 @@
 				</div>
 				<button
 					type="submit"
-					class="group inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-500 px-7 text-base font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
+					class="group inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-500 px-7 text-base font-bold text-navy-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-xl active:translate-y-0"
 				>
 					Register
 					<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
@@ -195,7 +195,7 @@
 					>
 						3 key takeaways
 						<span
-							class="shrink-0 text-brand-600 transition-transform duration-200 group-open:rotate-180"
+							class="shrink-0 text-brand-700 transition-transform duration-200 group-open:rotate-180"
 							aria-hidden="true"
 						>
 							<svg class="h-5 w-5" viewBox="0 0 20 20" fill="none">
@@ -213,7 +213,7 @@
 						{#each recordedTakeaways[webinar.title] ?? [] as takeaway (takeaway)}
 							<li class="flex min-w-0 items-start gap-2 text-base leading-relaxed text-ink-600">
 								<svg
-									class="mt-1 h-4 w-4 shrink-0 text-brand-600"
+									class="mt-1 h-4 w-4 shrink-0 text-brand-700"
 									viewBox="0 0 20 20"
 									fill="none"
 									aria-hidden="true"

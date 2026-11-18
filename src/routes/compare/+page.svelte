@@ -5,9 +5,9 @@
 	import { reveal } from '../../lib/reveal';
 
 	function cellMeta(value: string) {
-		if (value === 'Yes') return { icon: '✓', cls: 'font-bold text-brand-600' };
-		if (value === 'No') return { icon: '✗', cls: 'text-ink-500/50' };
-		if (value === 'Partial') return { icon: '~', cls: 'font-bold text-amber-600' };
+		if (value === 'Yes') return { icon: '✓', cls: 'font-bold text-brand-700' };
+		if (value === 'No') return { icon: '✗', cls: 'text-ink-500' };
+		if (value === 'Partial') return { icon: '~', cls: 'font-bold text-amber-700' };
 		return { icon: '', cls: 'font-semibold text-navy-900' };
 	}
 
@@ -98,7 +98,7 @@
 					<p class="mt-2 text-base leading-relaxed text-ink-600">{tool.tagline}</p>
 					<a
 						href="/compare/{tool.slug}"
-						class="mt-5 inline-flex min-h-11 items-center text-base font-bold text-brand-600 hover:text-brand-700"
+						class="mt-5 inline-flex min-h-11 items-center text-base font-bold text-brand-700 hover:text-brand-700"
 					>
 						Compare Adiyo vs {tool.name} →
 					</a>

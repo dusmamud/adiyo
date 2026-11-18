@@ -54,7 +54,7 @@
 					{#each release.changes as change (change)}
 						<li class="flex items-start gap-2.5 text-sm text-navy-900 sm:text-base">
 							<svg
-								class="mt-0.5 h-5 w-5 shrink-0 text-brand-600"
+								class="mt-0.5 h-5 w-5 shrink-0 text-brand-700"
 								viewBox="0 0 24 24"
 								fill="none"
 								stroke="currentColor"

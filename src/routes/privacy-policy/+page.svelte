@@ -58,7 +58,7 @@
 			<h2 class="text-2xl font-extrabold text-navy-900">Contact</h2>
 			<p class="mt-3 text-base leading-relaxed text-ink-600">
 				Questions about this policy? Email us at
-				<a href="mailto:{site.email}" class="font-bold text-brand-600 hover:text-brand-700">{site.email}</a>
+				<a href="mailto:{site.email}" class="font-bold text-brand-700 hover:text-brand-700">{site.email}</a>
 				or call {site.phone}.
 			</p>
 		</section>

@@ -4,9 +4,35 @@
 	import Footer from '#lib/components/Footer.svelte';
 	import favicon from '#lib/assets/favicon.svg';
 	import { site } from '../lib/data';
+	import { page } from '$app/state';
 	import type { LayoutProps } from './$types';
 
 	let { children }: LayoutProps = $props();
+
+	const canonicalUrl = $derived(site.url + page.url.pathname);
+	const ogType = $derived(/^\/blog\/[^/]+$/.test(page.url.pathname) ? 'article' : 'website');
+	const breadcrumbJsonLd = $derived(
+		page.url.pathname === '/'
+			? null
+			: {
+					'@context': 'https://schema.org',
+					'@type': 'BreadcrumbList',
+					itemListElement: [
+						{ '@type': 'ListItem', position: 1, name: 'Home', item: site.url + '/' },
+						...page.url.pathname
+							.split('/')
+							.filter(Boolean)
+							.map((seg, i, arr) => ({
+								'@type': 'ListItem',
+								position: i + 2,
+								name: seg
+									.replace(/-/g, ' ')
+									.replace(/\b\w/g, (c) => c.toUpperCase()),
+								item: site.url + '/' + arr.slice(0, i + 1).join('/')
+							}))
+					]
+				}
+	);
 
 	let showBackToTop = $state(false);
 
@@ -40,11 +66,27 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="canonical" href={canonicalUrl} />
 	<meta property="og:site_name" content="Adiyo" />
-	<meta property="og:type" content="website" />
+	<meta property="og:type" content={ogType} />
+	<meta property="og:url" content={canonicalUrl} />
+	<meta property="og:image" content="{site.url}/images/og-image.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta
+		property="og:image:alt"
+		content="Adiyo — Drive More Revenue and Hit Forecasts with Generative AI"
+	/>
 	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content="{site.url}/images/og-image.png" />
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html `<script type="application/ld+json">${JSON.stringify(orgJsonLd)}</script>`}
+	{#if breadcrumbJsonLd}
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+		{@html `<script type="application/ld+json">${JSON.stringify(breadcrumbJsonLd)}</script>`}
+	{/if}
 </svelte:head>
 
 <div class="flex min-h-screen flex-col">

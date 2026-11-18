@@ -30,7 +30,7 @@
 			>
 				{#if tier.highlight}
 					<span
-						class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-brand-500 px-4 py-1.5 text-xs font-extrabold whitespace-nowrap text-white"
+						class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-brand-500 px-4 py-1.5 text-xs font-extrabold whitespace-nowrap text-navy-900"
 					>
 						Most popular
 					</span>
@@ -49,7 +49,7 @@
 					{#each tier.features as feature (feature)}
 						<li class="flex items-start gap-2.5 text-sm text-navy-900 sm:text-base">
 							<svg
-								class="mt-0.5 h-5 w-5 shrink-0 text-brand-600"
+								class="mt-0.5 h-5 w-5 shrink-0 text-brand-700"
 								viewBox="0 0 24 24"
 								fill="none"
 								stroke="currentColor"
@@ -67,7 +67,7 @@
 				<a
 					href="/request-demo"
 					class="group mt-8 inline-flex min-h-12 items-center justify-center rounded-full px-6 text-base font-bold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 {tier.highlight
-						? 'bg-brand-500 text-white hover:bg-brand-600'
+						? 'bg-brand-500 text-navy-900 hover:bg-brand-600'
 						: 'bg-skysoft-100 text-navy-900 hover:bg-skysoft-200'}"
 				>
 					{tier.cta}

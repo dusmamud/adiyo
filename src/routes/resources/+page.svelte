@@ -60,7 +60,7 @@
 					{post.category}
 				</span>
 				<h3 class="mt-4 text-xl leading-snug font-extrabold text-navy-900">
-					<a href="/blog/{post.slug}" class="transition hover:text-brand-600">{post.title}</a>
+					<a href="/blog/{post.slug}" class="transition hover:text-brand-700">{post.title}</a>
 				</h3>
 				<p class="mt-2 flex-1 text-base leading-relaxed text-ink-600">{post.excerpt}</p>
 				<p class="mt-5 text-sm font-semibold text-ink-500">
@@ -68,7 +68,7 @@
 				</p>
 				<a
 					href="/blog/{post.slug}"
-					class="mt-3 inline-flex min-h-11 items-center text-base font-bold text-brand-600 hover:text-brand-700"
+					class="mt-3 inline-flex min-h-11 items-center text-base font-bold text-brand-700 hover:text-brand-700"
 				>
 					Read article →
 				</a>
@@ -84,12 +84,12 @@
 				use:reveal={{ delay: i * 80 }}
 				class="group block min-w-0 rounded-3xl bg-white p-7 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8"
 			>
-				<h3 class="text-xl font-extrabold text-navy-900 transition group-hover:text-brand-600">
+				<h3 class="text-xl font-extrabold text-navy-900 transition group-hover:text-brand-700">
 					{tool.title}
 				</h3>
 				<p class="mt-2 text-base leading-relaxed text-ink-600">{tool.text}</p>
 				<span
-					class="mt-4 inline-flex min-h-11 items-center text-base font-bold text-brand-600 group-hover:text-brand-700"
+					class="mt-4 inline-flex min-h-11 items-center text-base font-bold text-brand-700 group-hover:text-brand-700"
 				>
 					{tool.link}
 				</span>

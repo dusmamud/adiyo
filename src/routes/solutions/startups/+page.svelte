@@ -44,7 +44,7 @@
 				{#each solution.pains as pain (pain)}
 					<li class="flex min-w-0 items-start gap-3 text-base leading-relaxed text-ink-600">
 						<span
-							class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-500"
+							class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-700"
 							aria-hidden="true"
 						>
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
@@ -95,7 +95,7 @@
 				use:reveal={{ delay: i * 80 }}
 				class="min-w-0 rounded-3xl bg-white p-7 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
 			>
-				<p class="text-4xl font-extrabold text-brand-600">0{i + 1}</p>
+				<p class="text-4xl font-extrabold text-brand-700">0{i + 1}</p>
 				<h3 class="mt-4 text-lg font-extrabold text-navy-900">{step.title}</h3>
 				<p class="mt-2 text-base leading-relaxed text-ink-600">{step.text}</p>
 			</article>
@@ -114,12 +114,12 @@
 				use:reveal={{ delay: i * 80 }}
 				class="group block min-w-0 rounded-3xl bg-white p-7 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8"
 			>
-				<p class="text-xs font-extrabold tracking-[0.18em] text-brand-600 uppercase sm:text-sm">
+				<p class="text-xs font-extrabold tracking-[0.18em] text-brand-700 uppercase sm:text-sm">
 					{item.role}
 				</p>
 				<h3 class="mt-3 text-xl font-extrabold text-navy-900">{item.title}</h3>
 				<p class="mt-2 text-base leading-relaxed text-ink-600">{item.subtitle}</p>
-				<span class="mt-4 inline-flex min-h-11 items-center text-base font-bold text-brand-600">
+				<span class="mt-4 inline-flex min-h-11 items-center text-base font-bold text-brand-700">
 					Explore {item.role}
 					<span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"
 						>→</span

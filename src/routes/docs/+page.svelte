@@ -105,7 +105,7 @@
 				use:reveal={{ delay: i * 80 }}
 				class="min-w-0 rounded-3xl bg-white p-7 shadow-[0_8px_30px_rgba(10,37,64,0.08)] ring-1 ring-navy-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
 			>
-				<p class="text-4xl font-extrabold text-brand-600">0{i + 1}</p>
+				<p class="text-4xl font-extrabold text-brand-700">0{i + 1}</p>
 				<h3 class="mt-4 text-lg font-extrabold text-navy-900">{step.title}</h3>
 				<p class="mt-2 text-base leading-relaxed text-ink-600">{step.text}</p>
 			</article>
