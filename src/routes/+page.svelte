@@ -48,17 +48,17 @@ import CountUp from '#lib/components/CountUp.svelte';
 			<!-- Left: app-icons cluster on a mint/teal blob -->
 			<div use:reveal={{ delay: 120 }} class="absolute left-0 top-2 w-80 rounded-[2rem] bg-gradient-to-br from-mint-300/70 to-tealsoft-300/70 p-5 shadow-sm">
 				<div class="flex flex-wrap items-center justify-center gap-3">
-					<span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow" title="Salesforce" aria-label="Salesforce">
+					<span role="img" class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow" title="Salesforce" aria-label="Salesforce">
 						<svg width="26" height="26" viewBox="0 0 24 24" fill="#00a1e0" aria-hidden="true"><path d="M7.5 18.5a4.5 4.5 0 0 1-.4-8.98 6 6 0 0 1 11.6-1.2A4 4 0 0 1 18.5 18.5h-11Z" /></svg>
 					</span>
-					<span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-lg font-extrabold text-[#ea4335] shadow" title="Gmail" aria-label="Gmail">M</span>
-					<span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow" title="WhatsApp" aria-label="WhatsApp">
+					<span role="img" class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-lg font-extrabold text-[#ea4335] shadow" title="Gmail" aria-label="Gmail">M</span>
+					<span role="img" class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow" title="WhatsApp" aria-label="WhatsApp">
 						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9Z" /></svg>
 					</span>
-					<span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow" title="Instagram" aria-label="Instagram">
+					<span role="img" class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow" title="Instagram" aria-label="Instagram">
 						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.5" fill="#e1306c" /></svg>
 					</span>
-					<span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-xl font-extrabold text-[#4a154b] shadow" title="Slack" aria-label="Slack">#</span>
+					<span role="img" class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-xl font-extrabold text-[#4a154b] shadow" title="Slack" aria-label="Slack">#</span>
 				</div>
 			</div>
 
@@ -127,17 +127,17 @@ import CountUp from '#lib/components/CountUp.svelte';
 				</span>
 			</div>
 			<div use:reveal={{ delay: 120 }} class="col-span-2 flex flex-wrap items-center justify-center gap-3 rounded-[2rem] bg-gradient-to-br from-mint-300/70 to-tealsoft-300/70 p-4">
-				<span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow" aria-label="Salesforce">
+				<span role="img" class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow" aria-label="Salesforce">
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="#00a1e0" aria-hidden="true"><path d="M7.5 18.5a4.5 4.5 0 0 1-.4-8.98 6 6 0 0 1 11.6-1.2A4 4 0 0 1 18.5 18.5h-11Z" /></svg>
 				</span>
-				<span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-lg font-extrabold text-[#ea4335] shadow" aria-label="Gmail">M</span>
-				<span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow" aria-label="WhatsApp">
+				<span role="img" class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-lg font-extrabold text-[#ea4335] shadow" aria-label="Gmail">M</span>
+				<span role="img" class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow" aria-label="WhatsApp">
 					<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9Z" /></svg>
 				</span>
-				<span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow" aria-label="Instagram">
+				<span role="img" class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow" aria-label="Instagram">
 					<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.5" fill="#e1306c" /></svg>
 				</span>
-				<span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-xl font-extrabold text-[#4a154b] shadow" aria-label="Slack">#</span>
+				<span role="img" class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-xl font-extrabold text-[#4a154b] shadow" aria-label="Slack">#</span>
 			</div>
 			<div use:reveal={{ delay: 260 }} class="min-w-0 animate-float-slow rounded-3xl bg-white p-4 text-left shadow-lg shadow-navy-900/5">
 				<CountUp value={45} prefix="$" suffix="B" class="block text-2xl font-extrabold text-navy-900" />
@@ -186,11 +186,11 @@ import CountUp from '#lib/components/CountUp.svelte';
 						{#if f.icon === 'gpt'}
 							<span class="inline-flex h-9 min-w-11 items-center justify-center rounded-full bg-brand-100 px-3 text-xs font-bold tracking-wide text-brand-700">GPT-4</span>
 						{:else if f.icon === 'signals'}
-							<span class="flex h-9 w-9 items-center justify-center rounded-full bg-skysoft-200" aria-label="Data signals">
+							<span role="img" class="flex h-9 w-9 items-center justify-center rounded-full bg-skysoft-200" aria-label="Data signals">
 								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4l3-8 4 16 3-8h6" /></svg>
 							</span>
 						{:else}
-							<span class="flex h-9 w-9 items-center justify-center rounded-full bg-navy-900" aria-label="Alert">
+							<span role="img" class="flex h-9 w-9 items-center justify-center rounded-full bg-navy-900" aria-label="Alert">
 								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.7 21a2 2 0 0 1-3.4 0" /></svg>
 							</span>
 						{/if}
@@ -359,19 +359,19 @@ import CountUp from '#lib/components/CountUp.svelte';
 			<div class="grid w-full max-w-xs grid-cols-3 gap-4">
 				<div class="flex flex-col items-center gap-1">
 					<span class="h-6 border-l-2 border-dashed border-sky-300" aria-hidden="true"></span>
-					<span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-skysoft-100 shadow-sm" aria-label="Email">
+					<span role="img" class="flex h-12 w-12 items-center justify-center rounded-2xl bg-skysoft-100 shadow-sm" aria-label="Email">
 						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a2540" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" /></svg>
 					</span>
 				</div>
 				<div class="flex flex-col items-center gap-1">
 					<span class="h-6 border-l-2 border-dashed border-sky-300" aria-hidden="true"></span>
-					<span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-skysoft-100 shadow-sm" aria-label="Calendar">
+					<span role="img" class="flex h-12 w-12 items-center justify-center rounded-2xl bg-skysoft-100 shadow-sm" aria-label="Calendar">
 						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a2540" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
 					</span>
 				</div>
 				<div class="flex flex-col items-center gap-1">
 					<span class="h-6 border-l-2 border-dashed border-sky-300" aria-hidden="true"></span>
-					<span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-skysoft-100 shadow-sm" aria-label="Document">
+					<span role="img" class="flex h-12 w-12 items-center justify-center rounded-2xl bg-skysoft-100 shadow-sm" aria-label="Document">
 						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a2540" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" /><path d="M14 2v6h6M9 13h6M9 17h6" /></svg>
 					</span>
 				</div>

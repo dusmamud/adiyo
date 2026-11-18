@@ -22,7 +22,7 @@
 />
 
 <section class="mx-auto max-w-6xl px-4 pt-14 sm:pt-20">
-	<div
+	<div role="img"
 		use:reveal
 		class="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 border-b border-navy-900/10 pb-12"
 		aria-label="Customer companies"
